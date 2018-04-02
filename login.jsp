@@ -1,9 +1,9 @@
-<% String pageTitle="Hello World";  %>
+<% String pageTitle="Login";  %>
 <jsp:directive.include file = "header.jsp" />
 	  <div class="container">
 	  <h1>
       <%
-         out.println("Hello World");
+         out.println("Login to the System");
       %></h1>
 	  </div>
    </body>
