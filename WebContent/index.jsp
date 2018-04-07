@@ -4,10 +4,10 @@
 	  <div class="container">
 	  <h1>
       <%
-      out.println("Hello World to the our system<br>");
+      out.println("Welcome to our system<br>");
       
       test tes = new test();
-      out.println("SQL : "+tes.testc());
+      out.println("SQL status : "+tes.testc());
       	
       %></h1>
 	  </div>
