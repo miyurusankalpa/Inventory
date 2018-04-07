@@ -4,7 +4,7 @@
 	  <div class="container">
 	  <h1>
       <%
-      out.println("Hello World 2 <br>");
+      out.println("Hello World to the our system<br>");
       
       test tes = new test();
       out.println("SQL : "+tes.testc());
