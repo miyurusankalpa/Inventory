@@ -1,3 +1,4 @@
+<%@page import="test.*"%>
 
 <%
 	String pageTitle = "Dashboard";
@@ -33,6 +34,15 @@
 				<td>Jacob</td>
 				<td>Thornton</td>
 				<td>@fat</td>
+			</tr>
+			<tr>
+			<% 
+			test c = new test();
+
+			Products p = new Products();
+			
+			out.print(p.getdata());
+			%>
 			</tr>
 		</tbody>
 	</table>
