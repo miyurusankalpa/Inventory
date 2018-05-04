@@ -25,14 +25,21 @@ public class Products {
 		test c = new test();
 		ResultSet rs = c.getdata();
 		
-		rs.next();
+		String html = null;
 		
-		productid = rs.getInt("id");
-		name = rs.getString("products_name");
-		qty = rs.getInt("quantity");
-		price = rs.getInt("price");
+		while(rs.next())
+		{
+			//rs.next();
+			
+			productid = rs.getInt("id");
+			name = rs.getString("products_name");
+			qty = rs.getInt("quantity");
+			price = rs.getInt("price");
+			
+			html += "<tr><th scope=\"row\">"+productid+"</th><td>"+name+"</td><td>"+qty+"</td><td>"+price+"</td></tr>";
+		}
 		
-		return "<th scope=\"row\">"+productid+"</th><td>"+name+"</td><td>"+qty+"</td><td>"+price+"</td>";
+		return html;
 	}
 	
 	public String createquery() {

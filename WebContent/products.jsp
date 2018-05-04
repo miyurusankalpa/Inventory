@@ -12,7 +12,11 @@
 		<a href="products_add.jsp" class="btn btn-lg align-right btn-info">add</a>
 	</h1>
 	<br>
-	
+	<div class="alert alert-success" role="alert">
+	<%
+			out.println(session.getAttribute("result"));
+	%>
+	</div>
 	<table class="table table-hover">
 		<thead class="thead-dark">
 			<tr>
@@ -35,7 +39,6 @@
 				<td>Thornton</td>
 				<td>@fat</td>
 			</tr>
-			<tr>
 			<% 
 			test c = new test();
 
@@ -43,7 +46,6 @@
 			
 			out.print(p.getdata());
 			%>
-			</tr>
 		</tbody>
 	</table>
 

@@ -8,7 +8,7 @@
 		%>
 	</h1>
 	<br>
-	<form action="products_proccess.jsp" method="post">
+	<form action="/Inventory/Addata" method="post">
 		 <input type="text" class="form-control"
 			name="name" placeholder="enter a name"> <br>
 		  <input type="text" class="form-control"
