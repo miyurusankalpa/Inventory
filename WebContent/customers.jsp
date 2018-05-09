@@ -1,4 +1,4 @@
-
+<%@page import="test.*"%>
 <%
 	String pageTitle = "Dashboard";
 %>
@@ -21,6 +21,7 @@
 				<th scope="col">address</th>
 				<th scope="col">email</th>
 				<th scope="col">contact</th>
+				<th scope="col"></th>
 			</tr>
 		</thead>
 		<tbody>
@@ -36,6 +37,17 @@
 				<td>Thornton</td>
 				<td>@fat</td>
 			</tr>
+			
+		
+		
+			<% 
+			test c = new test();
+
+			Custermer cu = new Custermer();
+			
+			out.print(cu.getdata());
+			%>
+			
 		</tbody>
 	</table>
 
