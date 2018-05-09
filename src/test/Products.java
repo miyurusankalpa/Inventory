@@ -23,12 +23,14 @@ public class Products {
 	
 	public String getdata() throws SQLException {
 		test c = new test();
-		ResultSet rs = c.getdata();
+		ResultSet rs = c.getdata("SELECT * FROM oop.products;");
 		
-		String html = null;
+		String html;
+		html = "";
 		
 		while(rs.next())
 		{
+			//if (rs == null) return false;
 			//rs.next();
 			
 			productid = rs.getInt("id");
@@ -36,8 +38,16 @@ public class Products {
 			qty = rs.getInt("quantity");
 			price = rs.getInt("price");
 			
-			html += "<tr><th scope=\"row\">"+productid+"</th><td>"+name+"</td><td>"+qty+"</td><td>"+price+"</td></tr>";
+			html += "<tr><th scope=\"row\">"+productid+"</th><td>"+name+"</td><td>"+qty+"</td><td>"+price+"</td><td>"+createBtns()+"</td></tr>";
 		}
+		
+		return html;
+	}
+	
+	public String createBtns() {
+		String html;
+		html = "<div class=\"btn btn-info\">edit</div>";
+		html += "<div class=\"btn btn-danger\">delete</div>";
 		
 		return html;
 	}

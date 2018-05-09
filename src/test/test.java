@@ -58,7 +58,7 @@ public class test {
 
 	}
 
-	public ResultSet getdata()
+	public ResultSet getdata(String sql)
 	{
 		ResultSet rs = null;
 		try {
@@ -68,7 +68,7 @@ public class test {
 				Statement sta = con.createStatement();
 				
 				
-				rs = sta.executeQuery("SELECT * FROM oop.products;");
+				rs = sta.executeQuery(sql);
 				
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block

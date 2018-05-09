@@ -11,7 +11,17 @@
 		%>
 	</h1>
 	<br>
-	<div class="alert alert-success" role="alert">Login Successful</div>
+	<%
+
+		if(session.getAttribute("result") != null )	{
+			
+			out.print("<div class=\"alert alert-success\">");
+			out.println(session.getAttribute("result"));
+			session.removeAttribute("result");
+			out.print("</div>");
+			
+		}
+	%>
 
 	<div class="btn-group-lg">
 

@@ -7,8 +7,20 @@
          out.println("Login to the System");
       %>
 	</h1>
+	<%
+
+		if(session.getAttribute("result") != null )	{
+			
+			out.print("<div class=\"alert alert-warning\">");
+			out.println(session.getAttribute("result"));
+			session.removeAttribute("result");
+			out.print("</div>");
+			
+		}
+	%>
 	<br>
-	<form action="dashboard.jsp" method="post">
+	<p>use username test and password test to check login</p>
+	<form action="Login" method="post">
 		<input type="text" class="form-control"
 			name="username" placeholder="enter a username"> <br>
 		<input type="password" class="form-control"

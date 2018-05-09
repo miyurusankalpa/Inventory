@@ -12,11 +12,19 @@
 		<a href="products_add.jsp" class="btn btn-lg align-right btn-info">add</a>
 	</h1>
 	<br>
-	<div class="alert alert-success" role="alert">
+	
 	<%
+
+		if(session.getAttribute("result") != null )	{
+			
+			out.print("<div class=\"alert alert-success\">");
 			out.println(session.getAttribute("result"));
+			session.removeAttribute("result");
+			out.print("</div>");
+			
+		}
 	%>
-	</div>
+	
 	<table class="table table-hover">
 		<thead class="thead-dark">
 			<tr>
@@ -24,20 +32,10 @@
 				<th scope="col">name</th>
 				<th scope="col">qty</th>
 				<th scope="col">price</th>
+				<th scope="col"></th>
 			</tr>
 		</thead>
 		<tbody>
-			<tr>
-				<th scope="row">1</th>
-				<td>Mark</td>
-				<td>Otto</td>
-				<td>@mdo</td>
-			</tr>
-			<tr>
-				<th scope="row">2</th>
-				<td>Jacob</td>
-				<td>Thornton</td>
-				<td>@fat</td>
 			</tr>
 			<% 
 			test c = new test();
