@@ -1,6 +1,6 @@
 
-<% String pageTitle="Login";  %>
-<jsp:directive.include file="header.jsp" />
+<% Page.setTitle("Login");  %>
+<jsp:directive.include file="../header.jsp" />
 <div class="container">
 	<h1>
 		<%

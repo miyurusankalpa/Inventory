@@ -41,6 +41,7 @@ public class Login extends HttpServlet {
 		if(u.checkLogin(user, pass))
 		{
 			session.setAttribute("result", "Success");
+			session.setAttribute("loggedin", user);
 			
 			response.sendRedirect("/Inventory/dashboard.jsp");
 		} else {

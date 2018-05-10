@@ -2,7 +2,9 @@ package test;
 
 import java.sql.*;
 
-public class Products {
+import database.test;
+
+public class Products extends Page {
 	
 	private int productid;
 	private String name;
@@ -38,16 +40,8 @@ public class Products {
 			qty = rs.getInt("quantity");
 			price = rs.getInt("price");
 			
-			html += "<tr><th scope=\"row\">"+productid+"</th><td>"+name+"</td><td>"+qty+"</td><td>"+price+"</td><td>"+createBtns()+"</td></tr>";
+			html += "<tr><th scope=\"row\">"+productid+"</th><td>"+name+"</td><td>"+qty+"</td><td>"+price+"</td>"+createBtns()+"</tr>";
 		}
-		
-		return html;
-	}
-	
-	public String createBtns() {
-		String html;
-		html = "<div class=\"btn btn-info\">edit</div>";
-		html += "<div class=\"btn btn-danger\">delete</div>";
 		
 		return html;
 	}

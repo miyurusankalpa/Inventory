@@ -1,8 +1,8 @@
 
 <%
-	String pageTitle = "Dashboard";
+Page.setTitle("Dashboard");
 %>
-<jsp:directive.include file="header.jsp" />
+<jsp:directive.include file="../header.jsp" />
 <div class="container">
 	<h1>
 		<%

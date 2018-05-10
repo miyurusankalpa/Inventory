@@ -1,7 +1,5 @@
-
 <%
-	String pageTitle = "Dashboard";
-	boolean loggedin = true;
+	Page.setTitle("Dashboard");
 %>
 <jsp:directive.include file="header.jsp" />
 <div class="container">
@@ -25,9 +23,9 @@
 
 	<div class="btn-group-lg">
 
-		<a href="products.jsp" class="btn btn-info">products</a>
-		 <a	href="customers.jsp" class="btn btn-success">customers</a>
-		  <a href="transactions.jsp" class="btn btn-secondary">Transactions</a>
+		<a href="list/products.jsp" class="btn btn-info">products</a>
+		 <a	href="list/customers.jsp" class="btn btn-success">customers</a>
+		  <a href="list/transactions.jsp" class="btn btn-secondary">Transactions</a>
 
 	</div>
 

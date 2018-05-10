@@ -1,12 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@page import="test.Page"%>
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>
 	<%
-		out.println(pageTitle);
+		out.println(Page.getTitle());
 	%>
 </title>
 
@@ -24,15 +24,26 @@
 	<ul class="navbar-nav mr-auto">
 		<li class="nav-item"><a class="nav-link" href="index.jsp">Home</a>
 		</li>
-			<!-- Should be only displayed when loggedin -->
-		<li class="nav-item"><a class="nav-link" href="dashboard.jsp">Dashboard</a>
-		</li>
+			<%
+			if(session.getAttribute("loggedin") != null )	
+			{
+				out.print("<li class=\"nav-item\"><a class=\"nav-link\" href=\"dashboard.jsp\">Dashboard</a></li>");
+			}
+			%>
 	</ul>
 	<ul class="navbar-nav">
-			<!-- Should be only changed to logout out when looged in-->
-		<li class="nav-item"><a class="nav-link btn btn-outline-info"
-			href="login.jsp">Login</a></li>
-
+		<li class="nav-item">
+		<%
+		if(session.getAttribute("loggedin") == null )	
+			{
+				out.print("<a class=\"nav-link btn btn-outline-info\" href=\"login.jsp\">Login</a>");
+			} 
+				else 
+			{
+				out.print("<a class=\"nav-link btn btn-outline-info\" href=\"Logout\">Logout</a>");
+			}
+		%>
+ 		</li>
 	</ul>
 	</nav>
 

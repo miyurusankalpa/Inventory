@@ -2,7 +2,9 @@ package test;
 
 import java.sql.*;
 
-public class Customers {
+import database.test;
+
+public class Customers extends Page {
 	
 	private int customersid;
 	private String name;
@@ -43,16 +45,8 @@ public String getdata() throws SQLException {
 		email = rs.getString("email");
 		contact = rs.getInt("contact");
 		
-		html += "<tr><th scope=\"row\">"+customersid+"</th><td>"+name+"</td><td>"+address+"</td><td>"+email+"</td><td>"+contact+"</td><td>"+createBtns()+"</td></tr>";
+		html += "<tr><th scope=\"row\">"+customersid+"</th><td>"+name+"</td><td>"+address+"</td><td>"+email+"</td><td>"+contact+"</td>"+createBtns()+"</tr>";
 	}
-	
-	return html;
-}
-
-public String createBtns() {
-	String html;
-	html = "<div class=\"btn btn-info\">edit</div>";
-	html += "<div class=\"btn btn-danger\">delete</div>";
 	
 	return html;
 }

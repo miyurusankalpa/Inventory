@@ -2,6 +2,8 @@ package test;
 
 import java.sql.*;
 
+import database.test;
+
 public class User {
 
 	private String username;
@@ -10,7 +12,6 @@ public class User {
 	public void setusername(String uname) {
 		username = uname;
 	}
-
 
 
 	public boolean checkLogin(String username, String password) {

@@ -1,6 +1,6 @@
 
-<% String pageTitle="Products Add";  %>
-<jsp:directive.include file="header.jsp" />
+<% Page.setTitle("Products Add");  %>
+<jsp:directive.include file="../header.jsp" />
 <div class="container">
 	<h1>
 		<%

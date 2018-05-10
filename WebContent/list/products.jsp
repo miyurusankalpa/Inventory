@@ -1,15 +1,15 @@
 <%@page import="test.*"%>
 
 <%
-	String pageTitle = "Products";
+Page.setTitle("Products");
 %>
-<jsp:directive.include file="header.jsp" />
+<jsp:directive.include file="../header.jsp" />
 <div class="container">
 	<h1>
 		<%
 			out.println("product details");
 		%>
-		<a href="products_add.jsp" class="btn btn-lg align-right btn-info">add</a>
+		<a href="add/products.jsp" class="btn btn-lg align-right btn-info">add</a>
 	</h1>
 	<br>
 
@@ -24,7 +24,7 @@
 		}
 	%>
 
-	<table class="table table-hover">
+	<table class="table table-hover table-bordered text-center">
 		<thead class="thead-dark">
 			<tr>
 				<th scope="col">#</th>
@@ -32,10 +32,10 @@
 				<th scope="col">qty</th>
 				<th scope="col">price</th>
 				<th scope="col"></th>
+				<th scope="col"></th>
 			</tr>
 		</thead>
 		<tbody>
-			</tr>
 			<%
 				Products p = new Products();
 

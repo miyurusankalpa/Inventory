@@ -1,15 +1,15 @@
 <%@page import="test.*"%>
 
 <%
-	String pageTitle = "Customers";
+Page.setTitle("Customers");
 %>
-<jsp:directive.include file="header.jsp" />
+<jsp:directive.include file="../header.jsp" />
 <div class="container">
 	<h1>
 		<%
 			out.println("customers details");
 		%>
-		<a href="customers_add.jsp" class="btn btn-lg align-right btn-info">add</a>
+		<a href="add/customers.jsp" class="btn btn-lg align-right btn-info">add</a>
 	</h1>
 	<br>
 

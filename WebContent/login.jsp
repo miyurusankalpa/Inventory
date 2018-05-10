@@ -1,5 +1,5 @@
 
-<% String pageTitle="Login";  %>
+<% Page.setTitle("Login");  %>
 <jsp:directive.include file="header.jsp" />
 <div class="container">
 	<h1>
@@ -19,7 +19,7 @@
 		}
 	%>
 	<br>
-	<p>use username test and password test to check login</p>
+	<b>use username : test and password : test to  login</b>
 	<form action="Login" method="post">
 		<input type="text" class="form-control"
 			name="username" placeholder="enter a username"> <br>
