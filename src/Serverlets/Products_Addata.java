@@ -13,14 +13,14 @@ import javax.servlet.http.HttpSession;
 /**
  * Servlet implementation class Addata
  */
-@WebServlet({ "/Addata", "/test" })
-public class Addata extends HttpServlet {
+@WebServlet("/product_addata")
+public class Products_Addata extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Addata() {
+    public Products_Addata() {
         super();
         // TODO Auto-generated constructor stub
     }

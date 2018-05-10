@@ -1,7 +1,7 @@
 <%@page import="test.*"%>
 
 <%
-	String pageTitle = "Dashboard";
+	String pageTitle = "Products";
 %>
 <jsp:directive.include file="header.jsp" />
 <div class="container">
@@ -12,19 +12,18 @@
 		<a href="products_add.jsp" class="btn btn-lg align-right btn-info">add</a>
 	</h1>
 	<br>
-	
-	<%
 
-		if(session.getAttribute("result") != null )	{
-			
+	<%
+		if (session.getAttribute("result") != null) {
+
 			out.print("<div class=\"alert alert-success\">");
 			out.println(session.getAttribute("result"));
 			session.removeAttribute("result");
 			out.print("</div>");
-			
+
 		}
 	%>
-	
+
 	<table class="table table-hover">
 		<thead class="thead-dark">
 			<tr>
@@ -37,12 +36,10 @@
 		</thead>
 		<tbody>
 			</tr>
-			<% 
-			test c = new test();
+			<%
+				Products p = new Products();
 
-			Products p = new Products();
-			
-			out.print(p.getdata());
+				out.print(p.getdata());
 			%>
 		</tbody>
 	</table>

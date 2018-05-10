@@ -8,36 +8,33 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import test.Custermer;
-import test.Products;
-import test.test;
+import test.*;
 
 /**
- * Servlet implementation class Custermer_Adddata
+ * Servlet implementation class customers_Adddata
  */
-@WebServlet("/Custermer_Adddata")
-public class Custermer_Adddata extends HttpServlet {
+@WebServlet("/customers_addata")
+public class Customers_Addata extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Custermer_Adddata() {
+    public Customers_Addata() {
         super();
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+    /**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 				HttpSession session = request.getSession(true);
 				
 				test c = new test();
 
-				Custermer cu = new Custermer();
+				Customers cu = new Customers();
 
 				String n = request.getParameter("name");
 				String a = request.getParameter("address");
@@ -60,7 +57,7 @@ public class Custermer_Adddata extends HttpServlet {
 				
 				//response.getWriter().append(result);
 				
-				response.sendRedirect("/Inventory/custermer.jsp");
+				response.sendRedirect("/Inventory/customers.jsp");
 				
 				//out.println(result);
 				

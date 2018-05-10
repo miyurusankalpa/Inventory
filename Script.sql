@@ -1,7 +1,12 @@
---<ScriptOptions statementTerminator=";"/>
-CREATE DATABASE oop;
+--DROP DATABASE oop;
 
-USE oop;
+--CREATE DATABASE oop;
+
+DROP TABLE `products`;
+
+DROP TABLE `users`;
+
+DROP TABLE `customers`;
 
 CREATE TABLE `oop`.`products` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -18,5 +23,12 @@ CREATE TABLE `oop`.`users` (
   `position` VARCHAR(45) NULL,
   PRIMARY KEY (`idusers`));
 
-
 INSERT INTO oop.users (`idusers`,`username`, `password`) VALUES (null,"test","test");
+
+CREATE TABLE `oop`.`customers` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `customers_name` VARCHAR(45) NULL,
+  `address` VARCHAR(45) NULL,
+  `email` VARCHAR(45) NULL,
+  `contact` VARCHAR(45) NULL,
+  PRIMARY KEY (`id`));
