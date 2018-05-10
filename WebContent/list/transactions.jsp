@@ -1,39 +1,44 @@
+<%@page import="test.*"%>
 
-<%
-Page.setTitle("Dashboard");
-%>
+<% Page.setTitle("Transactions"); %>
 <jsp:directive.include file="../header.jsp" />
 <div class="container">
 	<h1>
 		<%
-			out.println("trans details");
+			out.println("transactions details");
 		%>
-		<a href="#" class="btn btn-lg align-right btn-info">add</a>
+		<a href="/Inventory/add/transactions.jsp" class="btn btn-lg align-right btn-info">add</a>
 	</h1>
 	<br>
 
-	<table class="table table-hover">
+	<%
+		if (session.getAttribute("result") != null) {
+
+			out.print("<div class=\"alert alert-success\">");
+			out.println(session.getAttribute("result"));
+			session.removeAttribute("result");
+			out.print("</div>");
+
+		}
+	%>
+	
+	<table class="table table-hover table-bordered text-center">
 		<thead class="thead-dark">
 			<tr>
 				<th scope="col">#</th>
 				<th scope="col">date</th>
 				<th scope="col">products</th>
 				<th scope="col">total</th>
+				<th scope="col"></th>
+				<th scope="col"></th>
 			</tr>
 		</thead>
 		<tbody>
-			<tr>
-				<th scope="row">1</th>
-				<td>Mark</td>
-				<td>Otto</td>
-				<td>@mdo</td>
-			</tr>
-			<tr>
-				<th scope="row">2</th>
-				<td>Jacob</td>
-				<td>Thornton</td>
-				<td>@fat</td>
-			</tr>
+		<%
+				Transactions t = new Transactions();
+
+				out.print(t.getdata());
+			%>
 		</tbody>
 	</table>
 

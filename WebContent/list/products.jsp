@@ -9,7 +9,7 @@ Page.setTitle("Products");
 		<%
 			out.println("product details");
 		%>
-		<a href="add/products.jsp" class="btn btn-lg align-right btn-info">add</a>
+		<a href="/Inventory/add/products.jsp" class="btn btn-lg align-right btn-info">add</a>
 	</h1>
 	<br>
 

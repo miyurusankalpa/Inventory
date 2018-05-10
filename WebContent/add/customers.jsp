@@ -1,12 +1,14 @@
 
-<% Page.setTitle("Login");  %>
+<% Page.setTitle("Add Customers");  %>
 <jsp:directive.include file="../header.jsp" />
 <div class="container">
 	<h1>
 		<%
 			out.println("product add");
 		%>
+	<a href="/Inventory/list/customers.jsp" class="btn btn-lg align-right btn-info">list</a>
 	</h1>
+	
 	<br>
 	<form action="/Inventory/customers_addata" method="post">
 		 <input type="text" class="form-control"

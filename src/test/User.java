@@ -14,7 +14,7 @@ public class User {
 	}
 
 
-	public boolean checkLogin(String username, String password) {
+	public static boolean checkLogin(String username, String password) {
 		test c = new test();
 
 		ResultSet rs = c.getdata(

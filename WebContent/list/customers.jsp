@@ -9,12 +9,12 @@ Page.setTitle("Customers");
 		<%
 			out.println("customers details");
 		%>
-		<a href="add/customers.jsp" class="btn btn-lg align-right btn-info">add</a>
+		<a href="/Inventory/add/customers.jsp" class="btn btn-lg align-right btn-info">add</a>
 	</h1>
 	<br>
 
 
-	<table class="table table-hover">
+	<table class="table table-hover table-bordered text-center">
 		<thead class="thead-dark">
 			<tr>
 				<th scope="col">#</th>
@@ -22,6 +22,7 @@ Page.setTitle("Customers");
 				<th scope="col">address</th>
 				<th scope="col">email</th>
 				<th scope="col">contact</th>
+				<th scope="col"></th>
 				<th scope="col"></th>
 			</tr>
 		</thead>

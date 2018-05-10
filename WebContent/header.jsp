@@ -9,7 +9,7 @@
 		out.println(Page.getTitle());
 	%>
 </title>
-
+<link rel="shortcut icon" href="/Inventory/favicon.ico">
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -21,13 +21,13 @@
 	<nav class="navbar navbar-expand-lg navbar-light bg-light"> <a
 		class="navbar-brand" href="#"><img src="/Inventory/icon.svg"
 		height="20px"></img> Inventory</a>
-	<ul class="navbar-nav mr-auto">
-		<li class="nav-item"><a class="nav-link" href="index.jsp">Home</a>
+		<ul class="navbar-nav mr-auto">
+		<li class="nav-item"><a class="nav-link" href="/Inventory/index.jsp">Home</a>
 		</li>
 			<%
 			if(session.getAttribute("loggedin") != null )	
 			{
-				out.print("<li class=\"nav-item\"><a class=\"nav-link\" href=\"dashboard.jsp\">Dashboard</a></li>");
+				out.print("<li class=\"nav-item\"><a class=\"nav-link\" href=\"/Inventory/dashboard.jsp\">Dashboard</a></li>");
 			}
 			%>
 	</ul>
@@ -36,11 +36,11 @@
 		<%
 		if(session.getAttribute("loggedin") == null )	
 			{
-				out.print("<a class=\"nav-link btn btn-outline-info\" href=\"login.jsp\">Login</a>");
+				out.print("<a class=\"nav-link btn\" href=\"/Inventory/login.jsp\">Login</a>");
 			} 
 				else 
 			{
-				out.print("<a class=\"nav-link btn btn-outline-info\" href=\"Logout\">Logout</a>");
+				out.print("<a class=\"nav-link btn\" href=\"/Inventory/Logout\">Logout</a>");
 			}
 		%>
  		</li>

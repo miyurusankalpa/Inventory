@@ -56,7 +56,7 @@ public class Products_Addata extends HttpServlet {
 		
 		//response.getWriter().append(result);
 		
-		response.sendRedirect("/Inventory/products.jsp");
+		response.sendRedirect("/Inventory/list/products.jsp");
 		
 		//out.println(result);
 		

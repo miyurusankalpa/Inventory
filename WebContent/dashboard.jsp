@@ -24,8 +24,8 @@
 	<div class="btn-group-lg">
 
 		<a href="list/products.jsp" class="btn btn-info">products</a>
-		 <a	href="list/customers.jsp" class="btn btn-success">customers</a>
-		  <a href="list/transactions.jsp" class="btn btn-secondary">Transactions</a>
+		<a href="list/customers.jsp" class="btn btn-success">customers</a>
+		<a href="list/transactions.jsp" class="btn btn-secondary">Transactions</a>
 
 	</div>
 

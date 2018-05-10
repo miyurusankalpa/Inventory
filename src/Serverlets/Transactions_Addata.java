@@ -14,14 +14,14 @@ import test.*;
 /**
  * Servlet implementation class customers_Adddata
  */
-@WebServlet("/customers_addata")
-public class Customers_Addata extends HttpServlet {
+@WebServlet("/transactions_addata")
+public class Transactions_Addata extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Customers_Addata() {
+    public Transactions_Addata() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -35,20 +35,18 @@ public class Customers_Addata extends HttpServlet {
 				
 				test c = new test();
 
-				Customers cu = new Customers();
+				Transactions t = new Transactions();
 
-				String n = request.getParameter("name");
-				String a = request.getParameter("address");
-				String e = request.getParameter("email");
-				int co = Integer.parseInt(request.getParameter("contact"));
+				String date = request.getParameter("date");
+				int pid = Integer.parseInt(request.getParameter("products"));
+				int tot = Integer.parseInt(request.getParameter("total"));
 				
 				
-				cu.setName(n);
-				cu.setAddress(a);
-				cu.setEmail(e);
-				cu.setContact(co);
+				t.setDate(date);
+				t.setProducts(pid);
+				t.setTotal(tot);
 				
-				String query = cu.createquery();
+				String query = t.createquery();
 
 				//out.println(query);c
 
@@ -58,7 +56,7 @@ public class Customers_Addata extends HttpServlet {
 				
 				//response.getWriter().append(result);
 				
-				response.sendRedirect("/Inventory/list/customers.jsp");
+				response.sendRedirect("/Inventory/list/transactions.jsp");
 				
 				//out.println(result);
 				

@@ -36,9 +36,7 @@ public class Login extends HttpServlet {
 		String user = request.getParameter("username");
 		String pass = request.getParameter("password");
 		
-		User u = new User();
-		
-		if(u.checkLogin(user, pass))
+		if(User.checkLogin(user, pass))
 		{
 			session.setAttribute("result", "Success");
 			session.setAttribute("loggedin", user);

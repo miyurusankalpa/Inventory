@@ -1,12 +1,10 @@
---DROP DATABASE oop;
-
---CREATE DATABASE oop;
-
 DROP TABLE `products`;
 
 DROP TABLE `users`;
 
 DROP TABLE `customers`;
+
+DROP TABLE `transactions`;
 
 CREATE TABLE `oop`.`products` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -31,4 +29,11 @@ CREATE TABLE `oop`.`customers` (
   `address` VARCHAR(45) NULL,
   `email` VARCHAR(45) NULL,
   `contact` VARCHAR(45) NULL,
+  PRIMARY KEY (`id`));
+  
+  CREATE TABLE `oop`.`transactions` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `date` VARCHAR(45) NULL,
+  `products` INT NULL,
+  `total` INT NULL,
   PRIMARY KEY (`id`));
