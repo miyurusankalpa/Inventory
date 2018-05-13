@@ -10,10 +10,16 @@
 	
 	<br>
 	<form action="/Inventory/transactions_addata" method="post">
-		 <input type="text" class="form-control"
+		 <input type="date" class="form-control"
 			name="date" placeholder="enter a date"> <br>
-		  <input type="text" class="form-control"
-			name="products" placeholder="enter a product id"> <br>
+		  <select class="form-control" name="products">
+		  <option value="" disabled selected hidden>enter a product id</option>
+		    <option>1</option>
+		    <option>2</option>
+		    <option>3</option>
+		    <option>4</option>
+		  </select>
+		<br>
 		<input type="number" class="form-control"
 			name="total" placeholder="enter a total"> <br>
 		 <input
