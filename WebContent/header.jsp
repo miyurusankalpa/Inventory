@@ -15,6 +15,8 @@
 
 <link rel="stylesheet" href="/Inventory/bootstrap/css/bootstrap.min.css">
 <link href="/Inventory/bootstrap/sticky-footer-navbar.css" rel="stylesheet">
+<link rel="stylesheet" href="/Inventory/fontawesome/css/fontawesome-all.min.css">
+
 </head>
 <body>
  <header>

@@ -21,12 +21,10 @@
 		}
 	%>
 
-	<div class="btn-group-lg">
-
-		<a href="list/products.jsp" class="btn btn-info">products</a>
-		<a href="list/customers.jsp" class="btn btn-success">customers</a>
-		<a href="list/transactions.jsp" class="btn btn-secondary">Transactions</a>
-
+	<div>
+		<a href="list/products.jsp" class="btn btn-info btn-lg btn-block"><i class="fa fa-box"></i> Products</a>
+		<a href="list/customers.jsp" class="btn btn-success btn-lg btn-block"><i class="fa fa-user"></i> Customers</a>
+		<a href="list/transactions.jsp" class="btn btn-dark btn-lg btn-block"><i class="fa fa-list-alt"></i> Transactions</a>
 	</div>
 
 </div>
