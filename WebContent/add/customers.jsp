@@ -13,7 +13,7 @@
 	<form action="/Inventory/customers_addata" method="post">
 		 <input type="text" class="form-control"
 			name="name" placeholder="enter a name"> <br>
-		  <input type="number" class="form-control"
+		  <input type="text" class="form-control"
 			name="address" placeholder="enter a address"> <br>
 		<input type="text" class="form-control"
 			name="email" placeholder="enter a email"> <br>
