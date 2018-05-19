@@ -30,5 +30,4 @@
 	</div>
 
 </div>
-</body>
-</html>
+<jsp:directive.include file = "footer.jsp" />

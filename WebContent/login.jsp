@@ -24,11 +24,10 @@
 			name="username" placeholder="enter a username"> <br>
 		<input type="password" class="form-control"
 			name="password" placeholder="enter a password"> <br> <input
-			type="submit" class="btn btn-primary" value="Login">
+			type="submit" class="btn btn-primary btn-block" value="Login">
 	</form>
 	
 <br>
 <b>use the username "test" and password "test"" for the first login</b>
 </div>
-</body>
-</html>
+<jsp:directive.include file = "footer.jsp" />

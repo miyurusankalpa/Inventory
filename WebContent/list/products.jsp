@@ -45,5 +45,4 @@ Page.setTitle("Products");
 	</table>
 
 </div>
-</body>
-</html>
+<jsp:directive.include file = "../footer.jsp" />
