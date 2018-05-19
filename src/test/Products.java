@@ -79,7 +79,7 @@ public class Products extends Page {
 	}
 
 	public String deletequery() {
-		return "DELETE FROM `products` WHERE id=' " + this.productid + "'";
+		return "DELETE FROM `products` WHERE id='" + this.productid + "'";
 	}
 
 	public String createquery() {

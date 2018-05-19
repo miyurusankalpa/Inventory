@@ -42,7 +42,7 @@ public class Delete extends HttpServlet {
 		
 		String query = null;
 		
-		if(tname.equals("product"))
+		if(tname.equals("products"))
 		{
 			Products p = new Products();
 			p.setId(id);
