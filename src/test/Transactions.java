@@ -49,4 +49,9 @@ public class Transactions extends Page {
 	public String createquery() {
 		return "INSERT INTO `oop`.`transactions` (`id`,	`date`, `products`, `total`) VALUES (null,\""+ this.date+"\",\""+ this.products+"\",\""+ this.total+"\");";
 	}
+	
+	public String deletequery(String id) {
+		return "DELETE FROM  `oop`.`transaction` WHERE id=' "+id+"'";
+	}
+	
 }

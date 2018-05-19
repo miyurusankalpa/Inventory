@@ -54,4 +54,9 @@ public String getdata() throws SQLException {
 public String createquery() {
 	return "INSERT INTO `oop`.`customers` (`id`, `customers_name`, `address`, `email`, `contact`) VALUES (null,\""+ this.name+"\",\""+ this.address+"\",\""+ this.email+"\",\""+ this.contact+"\");";
     }
+
+public String deletequery(String id) {
+	return "DELETE FROM  `oop`.`customers` WHERE id=' "+id+"'";
+}
+
 }
