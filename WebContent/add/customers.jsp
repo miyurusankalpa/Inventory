@@ -20,7 +20,7 @@
 		<input type="number" class="form-control"
 			name="contact" placeholder="enter a contact"> <br>
 		 <input
-			type="submit" class="btn btn-primary" value="Add">
+			type="submit" class="btn btn-primary float-right" value="Add">
 	</form>
 
 </div>

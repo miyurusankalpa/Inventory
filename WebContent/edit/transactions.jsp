@@ -1,46 +1,41 @@
-<%@page import="test.*"%>
-
-<% Page.setTitle("Transactions"); %>
+<%@page import="test.*" %>
+<% Page.setTitle("Edit Transactions");  %>
 <jsp:directive.include file="../header.jsp" />
 <div class="container">
 	<h1>
 		<%
-			out.println("transactions details");
+			out.println("transactions edit");
 		%>
-		<a href="/Inventory/add/transactions.jsp" class="btn btn-lg align-right btn-info">add</a>
+	<a href="/Inventory/list/transactions.jsp" class="btn btn-lg align-right btn-info">list</a>
 	</h1>
-	<br>
-
 	<%
-		if (session.getAttribute("result") != null) {
-
-			out.print("<div class=\"alert alert-success\">");
-			out.println(session.getAttribute("result"));
-			session.removeAttribute("result");
-			out.print("</div>");
-
-		}
+		String s = request.getParameter("id");
+		int i = Integer.parseInt(s);
+		Transactions t = new Transactions(); 
+		t.getdatafromdb(i);
+		
 	%>
-	
-	<table class="table table-hover table-bordered text-center">
-		<thead class="thead-dark">
-			<tr>
-				<th scope="col">#</th>
-				<th scope="col">date</th>
-				<th scope="col">products</th>
-				<th scope="col">total</th>
-				<th scope="col"></th>
-				<th scope="col"></th>
-			</tr>
-		</thead>
-		<tbody>
-		<%
-				Transactions t = new Transactions();
-
-				out.print(t.getdata());
-			%>
-		</tbody>
-	</table>
+	<br>
+	<form action="/Inventory/Transactions_Edit" method="post">
+		<input type="text" class="form-control"
+			name="id" placeholder="id" value="<% out.print(t.getId()); %>" readonly> <br>
+	 	<input type="date" class="form-control"
+			name="date" placeholder="enter a date" value="<% out.print(t.getDate()); %>"> <br>
+		 <input type="date" class="form-control"
+			name="date" placeholder="enter a date"  value="<% out.print(t.getDate()); %>"> <br>
+		  <select class="form-control" name="products">
+		  <option value="" disabled selected hidden>enter a product id</option>
+		    <option>1</option>
+		    <option>2</option>
+		    <option>3</option>
+		    <option>4</option>
+		  </select>
+		<br>
+		<input type="number" class="form-control"
+			name="total" placeholder="enter a total" value="<% out.print(t.getTotal()); %>"> <br>
+		 <input
+			type="submit" class="btn btn-primary float-right" value="Edit">
+	</form>
 
 </div>
 <jsp:directive.include file = "../footer.jsp" />

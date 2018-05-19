@@ -23,7 +23,7 @@
 		<input type="number" class="form-control"
 			name="total" placeholder="enter a total"> <br>
 		 <input
-			type="submit" class="btn btn-primary" value="Add">
+			type="submit" class="btn btn-primary float-right" value="Add">
 	</form>
 
 </div>

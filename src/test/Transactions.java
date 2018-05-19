@@ -35,12 +35,24 @@ public class Transactions extends Page {
 		return date;
 	}
 
-	public int setProducts() {
+	public int getProducts() {
 		return products;
 	}
 	
-	public int setTotal() {
+	public int getTotal() {
 		return total;
+	}
+	
+	public void getdatafromdb(int id) throws SQLException {
+		test c = new test();
+		ResultSet rs = c.getdata("SELECT * FROM oop.transactions WHERE id='"+id+"';");
+
+		while (rs.next()) {
+			id = rs.getInt("id");
+			date = rs.getString("date");
+			products = rs.getInt("products");
+			total = rs.getInt("total");
+		}
 	}
 	
 	public String getdata() throws SQLException {
@@ -67,11 +79,15 @@ public class Transactions extends Page {
 	}
 	
 	public String createquery() {
-		return "INSERT INTO `oop`.`transactions` (`id`,	`date`, `products`, `total`) VALUES (null,\""+ this.date+"\",\""+ this.products+"\",\""+ this.total+"\");";
+		return "INSERT INTO `transactions` (`id`, `date`, `products`, `total`) VALUES (null,\""+ this.date+"\",\""+ this.products+"\",\""+ this.total+"\");";
 	}
 	
 	public String deletequery() {
-		return "DELETE FROM  `oop`.`transaction` WHERE id=' "+id+"'";
+		return "DELETE FROM `transactions` WHERE id=' "+this.id+"'";
 	}
 	
+	public String editquery() {
+		return "UPDATE `transaction` SET date='" + this.date + "', products='" + this.products + "', total='"
+				+ this.total + "' WHERE id = '" + this.id + "'";
+	}
 }

@@ -12,12 +12,12 @@ public class Customers extends Page {
 	private String email;
 	private int contact;
 	
-	public void setID(int customersid)
+	public void setId(int customersid)
 	{
 		this.customersid=customersid;
 	}
 	
-	public int getID()
+	public int getId()
 	{
 		return customersid;
 	}
@@ -58,36 +58,52 @@ public class Customers extends Page {
 		return contact;
 	}
 	
-public String getdata() throws SQLException {
-	test cu = new test();
-	
-	ResultSet rs = cu.getdata("SELECT * FROM oop.customers;");
-	
-	String html;
-	html = "";
-	
-	while(rs.next())
-	{
-		//rs.next();
-		
-		customersid = rs.getInt("id");
-		name = rs.getString("customers_name");
-		address = rs.getString("address");
-		email = rs.getString("email");
-		contact = rs.getInt("contact");
-		
-		html += "<tr><th scope=\"row\">"+customersid+"</th><td>"+name+"</td><td>"+address+"</td><td>"+email+"</td><td>"+contact+"</td>"+createBtns(customersid, "customers")+"</tr>";
+	public void getdatafromdb(int id) throws SQLException {
+		test c = new test();
+		ResultSet rs = c.getdata("SELECT * FROM oop.customers WHERE id='"+id+"';");
+
+		while (rs.next()) {
+			customersid = rs.getInt("id");
+			name = rs.getString("customers_name");
+			address = rs.getString("customers_name");
+			email = rs.getString("email");
+			contact = rs.getInt("contact");
+		}
 	}
 	
-	return html;
-}
+	public String getdata() throws SQLException {
+		test cu = new test();
+		
+		ResultSet rs = cu.getdata("SELECT * FROM oop.customers;");
+		
+		String html;
+		html = "";
+		
+		while(rs.next())
+		{
+			//rs.next();
+			
+			customersid = rs.getInt("id");
+			name = rs.getString("customers_name");
+			address = rs.getString("address");
+			email = rs.getString("email");
+			contact = rs.getInt("contact");
+			
+			html += "<tr><th scope=\"row\">"+customersid+"</th><td>"+name+"</td><td>"+address+"</td><td>"+email+"</td><td>"+contact+"</td>"+createBtns(customersid, "customers")+"</tr>";
+		}
+		
+		return html;
+	}
 
-public String createquery() {
-	return "INSERT INTO `oop`.`customers` (`id`, `customers_name`, `address`, `email`, `contact`) VALUES (null,\""+ this.name+"\",\""+ this.address+"\",\""+ this.email+"\",\""+ this.contact+"\");";
-    }
+	public String createquery() {
+		return "INSERT INTO `oop`.`customers` (`id`, `customers_name`, `address`, `email`, `contact`) VALUES (null,\""+ this.name+"\",\""+ this.address+"\",\""+ this.email+"\",\""+ this.contact+"\");";
+	    }
 
-public String deletequery(String id) {
-	return "DELETE FROM  `oop`.`customers` WHERE id=' "+id+"'";
-}
+	public String deletequery() {
+		return "DELETE FROM  `oop`.`customers` WHERE id=' "+this.customersid+"'";
+	}
 
+	public String editquery() {
+		return "UPDATE `customers` SET customers_name='" + this.name + "', address='" + this.address + "', email='"+ this.email + "', contact='"+ this.contact + "' WHERE id = '" + this.customersid + "'";
+	}
 }

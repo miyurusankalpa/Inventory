@@ -34,43 +34,45 @@ public class Delete extends HttpServlet {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		
 		int id  = Integer.parseInt(request.getParameter("id"));
-		String t  = request.getParameter("table");
+		String tname  = request.getParameter("table");
 		
 		HttpSession session = request.getSession(true);
 		
-		test c = new test();
+		test con = new test();
 		
-		String query;
+		String query = null;
 		
-		if(t.equals("product"))
+		if(tname.equals("product"))
 		{
 			Products p = new Products();
 			p.setId(id);
 			query = p.deletequery();
+			con.adddata(query);
 		}
 		
-		if(t.equals("customers"))
+		if(tname.equals("customers"))
 		{
 			Customers c = new Customers();
 			c.setId(id);
 			query = c.deletequery();
-		} 
+			con.adddata(query);
+		}
 		
-		if(t.equals("transactions"))
+		if(tname.equals("transactions"))
 		{
 			Transactions t = new Transactions();
 			t.setId(id);
 			query = t.deletequery();
+			con.adddata(query);
 		} 
 		
 		
-		String result = c.adddata(query);
+	//String result = con.adddata(query);
 		
 		session.setAttribute("result", "success delete data");
 		
-		//response.getWriter().append(result);
 		
-		response.sendRedirect("/Inventory/list/"+t+".jsp");
+		response.sendRedirect("/Inventory/list/"+tname+".jsp");
 	}
 
 }

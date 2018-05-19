@@ -6,8 +6,8 @@ public class Page {
 	
 	public String createBtns(int tid, String page) {
 		String html;
-		html = "<td><div class=\"btn btn-primary\" onclick=\"window.location('/Inventory/edit/"+page+".jsp?id="+tid+"')\">edit</div></\td>";
-		html += "<td><div class=\"btn btn-danger\" onclick=\"window.location('/Inventory/Delete?id="+tid+"&t="+page+"')\">delete</div></\td>";
+		html = "<td><a class=\"btn btn-primary\" href=\"/Inventory/edit/"+page+".jsp?id="+tid+"\">edit</a></\td>";
+		html += "<td><a class=\"btn btn-danger\" href=\"/Inventory/Delete?id="+tid+"&table="+page+"\">delete</a></\td>";
 		
 		return html;
 	}

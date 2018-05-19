@@ -6,7 +6,7 @@
 		<%
 			out.println("product add");
 		%>
-	<a href="/Inventory/list/product.jsp" class="btn btn-lg align-right btn-info">list</a>
+	<a href="/Inventory/list/products.jsp" class="btn btn-lg align-right btn-info">list</a>
 	</h1>
 	
 	<br>
@@ -18,7 +18,7 @@
 		 <input type="number" class="form-control"
 			name="price" placeholder="enter a pricw"> <br>
 		 <input
-			type="submit" class="btn btn-primary" value="Add">
+			type="submit" class="btn btn-primary float-right" value="Add">
 	</form>
 
 </div>

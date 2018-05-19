@@ -26,7 +26,7 @@
 		 <input type="number" class="form-control"
 			name="price" placeholder="enter a price" value="<% out.print(p.getPrice()); %>"> <br>
 		 <input
-			type="submit" class="btn btn-primary" value="Edit">
+			type="submit" class="btn btn-primary float-right" value="Edit">
 	</form>
 
 </div>
