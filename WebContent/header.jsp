@@ -28,7 +28,7 @@
 			<%
 			if(session.getAttribute("loggedin") != null )	
 			{
-				out.print("<li class=\"nav-item\"><a class=\"nav-link\" href=\"/Inventory/dashboard.jsp\">Dashboard</a></li>");
+				out.print("<li class=\"nav-item\"><a class=\"nav-link text-white\" href=\"/Inventory/dashboard.jsp\">Dashboard</a></li>");
 			}
 			%>
 	</ul>

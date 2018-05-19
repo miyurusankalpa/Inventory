@@ -4,10 +4,10 @@ public class Page {
 	
 	private static String title;
 	
-	public String createBtns(int tid) {
+	public String createBtns(int tid, String page) {
 		String html;
-		html = "<td><div class=\"btn btn-primary\">edit</div></\td>";
-		html += "<td><div class=\"btn btn-danger\" onclick=\"window.location('/Inventory/Delete?id="+tid+"')\">delete</div></\td>";
+		html = "<td><div class=\"btn btn-primary\" onclick=\"window.location('/Inventory/edit/"+page+".jsp?id="+tid+"')\">edit</div></\td>";
+		html += "<td><div class=\"btn btn-danger\" onclick=\"window.location('/Inventory/Delete?id="+tid+"&t="+page+"')\">delete</div></\td>";
 		
 		return html;
 	}

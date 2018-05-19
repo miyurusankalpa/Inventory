@@ -45,7 +45,7 @@ public String getdata() throws SQLException {
 		email = rs.getString("email");
 		contact = rs.getInt("contact");
 		
-		html += "<tr><th scope=\"row\">"+customersid+"</th><td>"+name+"</td><td>"+address+"</td><td>"+email+"</td><td>"+contact+"</td>"+createBtns()+"</tr>";
+		html += "<tr><th scope=\"row\">"+customersid+"</th><td>"+name+"</td><td>"+address+"</td><td>"+email+"</td><td>"+contact+"</td>"+createBtns(customersid, "customers")+"</tr>";
 	}
 	
 	return html;

@@ -15,7 +15,7 @@ public class test {
 		}
 	}
 	
-	public Connection connect() throws ClassNotFoundException {
+	public Connection connect() throws ClassNotFoundException{
 		Connection conn = null;
 		final String DB_URL = "jdbc:mysql://localhost/oop";
 
@@ -24,8 +24,10 @@ public class test {
 		try {
 			conn = DriverManager.getConnection(DB_URL, "test", "test");
 		} catch (SQLException e) {
-		
+			e.getMessage();
 		}
+		
+		//Connection con = this.connect();
 		return conn;
 	}
 	

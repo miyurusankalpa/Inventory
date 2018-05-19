@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import database.test;
-import test.Products;
+import test.*;
 
 /**
  * Servlet implementation class Delete
@@ -33,25 +33,44 @@ public class Delete extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		
-		String id  = request.getParameter("id");
+		int id  = Integer.parseInt(request.getParameter("id"));
+		String t  = request.getParameter("table");
 		
 		HttpSession session = request.getSession(true);
 		
 		test c = new test();
-
-		Products p = new Products();
 		
-		String query = p.deletequery(id);
-
-		//out.println(query);
-
+		String query;
+		
+		if(t.equals("product"))
+		{
+			Products p = new Products();
+			p.setId(id);
+			query = p.deletequery();
+		}
+		
+		if(t.equals("customers"))
+		{
+			Customers c = new Customers();
+			c.setId(id);
+			query = c.deletequery();
+		} 
+		
+		if(t.equals("transactions"))
+		{
+			Transactions t = new Transactions();
+			t.setId(id);
+			query = t.deletequery();
+		} 
+		
+		
 		String result = c.adddata(query);
 		
 		session.setAttribute("result", "success delete data");
 		
 		//response.getWriter().append(result);
 		
-		response.sendRedirect("/Inventory/list/products.jsp");
+		response.sendRedirect("/Inventory/list/"+t+".jsp");
 	}
 
 }

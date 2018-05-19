@@ -11,6 +11,10 @@ public class Transactions extends Page {
 	private int products;
 	private int total;
 	
+	public void setId(int i) {
+		id = i;
+	}
+	
 	public void setDate(String pdate) {
 		date = pdate;
 	}
@@ -21,6 +25,22 @@ public class Transactions extends Page {
 	
 	public void setTotal(int tot) {
 		total = tot;
+	}
+	
+	public int getId() {
+		return id;
+	}
+	
+	public String getDate() {
+		return date;
+	}
+
+	public int setProducts() {
+		return products;
+	}
+	
+	public int setTotal() {
+		return total;
 	}
 	
 	public String getdata() throws SQLException {
@@ -40,7 +60,7 @@ public class Transactions extends Page {
 			products = rs.getInt("products");
 			total = rs.getInt("total");
 			
-			html += "<tr><th scope=\"row\">"+id+"</th><td>"+date+"</td><td>"+products+"</td><td>"+total+"</td>"+createBtns()+"</tr>";
+			html += "<tr><th scope=\"row\">"+id+"</th><td>"+date+"</td><td>"+products+"</td><td>"+total+"</td>"+createBtns(id, "transactions")+"</tr>";
 		}
 		
 		return html;
@@ -50,7 +70,7 @@ public class Transactions extends Page {
 		return "INSERT INTO `oop`.`transactions` (`id`,	`date`, `products`, `total`) VALUES (null,\""+ this.date+"\",\""+ this.products+"\",\""+ this.total+"\");";
 	}
 	
-	public String deletequery(String id) {
+	public String deletequery() {
 		return "DELETE FROM  `oop`.`transaction` WHERE id=' "+id+"'";
 	}
 	
