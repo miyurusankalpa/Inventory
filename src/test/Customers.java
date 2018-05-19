@@ -12,19 +12,50 @@ public class Customers extends Page {
 	private String email;
 	private int contact;
 	
+	public void setID(int customersid)
+	{
+		this.customersid=customersid;
+	}
+	
+	public int getID()
+	{
+		return customersid;
+	}
+	
 	public void setName(String cname) {
 		name = cname;
 	}
-
+	
+	public String getName()
+	{
+		return name;
+	}
+	
 	public void setAddress(String caddress) {
 		address = caddress;
+	}
+	
+	public String getAddress()
+	{
+		return address;
 	}
 	
 	public void setEmail(String cemail) {
 		email = cemail;
 	}
+	
+	public String getEmail()
+	{
+		return email;
+	}
+	
 	public void setContact(int ccontact) {
 		contact = ccontact;
+	}
+	
+	public int getContact()
+	{
+		return contact;
 	}
 	
 public String getdata() throws SQLException {
