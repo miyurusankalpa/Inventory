@@ -111,7 +111,7 @@ public class Transactions extends Page {
 	}
 	
 	public String editquery() {
-		return "UPDATE `transaction` SET date='" + this.date + "', products='" + this.product.getId() + "', customers ='" + this.customer.getId() + "', total='"
+		return "UPDATE `transactions` SET date='" + this.date + "', products='" + this.product.getId() + "', customers ='" + this.customer.getId() + "', total='"
 				+ this.total + "' WHERE id = '" + this.id + "'";
 	}
 }
