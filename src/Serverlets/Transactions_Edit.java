@@ -58,6 +58,7 @@ public class Transactions_Edit extends HttpServlet {
 		int cid = Integer.parseInt(request.getParameter("customers"));
 		int tot = Integer.parseInt(request.getParameter("total"));
 
+		t.setId(i);
 		t.setDate(date);
 		
 		p1.setId(pid);
