@@ -49,6 +49,8 @@ public class Products extends Page {
 
 		while (rs.next()) {
 			productid = rs.getInt("id");
+			System.out.println(rs.getInt("id"));
+
 			name = rs.getString("products_name");
 			qty = rs.getInt("quantity");
 			price = rs.getInt("price");
@@ -92,7 +94,7 @@ public class Products extends Page {
 			price = rs.getInt("price");
 			
 			if(select==productid) s = "selected";  else s = "";
-			html += "<option value=\""+ productid +"\" "+s+">" + name + "</<option>";
+			html += "<option value=\""+ productid +"\" "+s+">" + name + "</option>";
 		}
 
 		return html;

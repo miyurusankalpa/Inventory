@@ -106,7 +106,7 @@ public class Customers extends Page {
 			name = rs.getString("customers_name");
 			
 			if(select==customersid) s = "selected";  else s = "";
-			html += "<option value=\""+ customersid +"\" "+s+">" + name + "</<option>";
+			html += "<option value=\""+ customersid +"\" "+s+">" + name + "</option>";
 		}
 
 		return html;

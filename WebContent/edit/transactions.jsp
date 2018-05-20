@@ -21,13 +21,21 @@
 			name="id" placeholder="id" value="<% out.print(t.getId()); %>" readonly> <br>
 	 	<input type="date" class="form-control"
 			name="date" placeholder="enter a date" value="<% out.print(t.getDate()); %>"> <br>
-		 <input type="date" class="form-control"
-			name="date" placeholder="enter a date"  value="<% out.print(t.getDate()); %>"> <br>
-		  <select class="form-control" name="products">
-		  <option value="" disabled selected hidden>enter a product id</option>
+		<select class="form-control" name="products">
+		  <option value="" disabled hidden>select a product id</option>
 		    <%
-		    Products p = new Products(); 
-		    out.print(p.getproducts(t.getId()));
+		    Products p = new Products();
+	
+		    out.print(p.getproducts(t.getProduct().getId()));
+		    %>
+		  </select>
+		<br>
+		<select class="form-control" name="customers">
+		  <option value="" disabled hidden>select a customer</option>
+		    <%
+		    Customers c = new Customers(); 
+
+		    out.print(c.getcustomers(t.getCustomer().getId()));
 		    %>
 		  </select>
 		<br>

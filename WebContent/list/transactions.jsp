@@ -28,6 +28,7 @@
 				<th scope="col">#</th>
 				<th scope="col">date</th>
 				<th scope="col">products</th>
+				<th scope="col">customer</th>
 				<th scope="col">total</th>
 				<th scope="col"></th>
 				<th scope="col"></th>

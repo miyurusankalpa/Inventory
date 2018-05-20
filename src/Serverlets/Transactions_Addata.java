@@ -1,6 +1,8 @@
 package Serverlets;
 
 import java.io.IOException;
+import java.sql.SQLException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -46,10 +48,21 @@ public class Transactions_Addata extends HttpServlet {
 
 				t.setDate(date);
 				
-				p1.setId(pid);
+				try {
+					p1.getdatafromdb(pid);
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				t.setProduct(p1);
 				
-				c1.setId(cid);
+				try {
+					c1.getdatafromdb(cid);
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
 				t.setCustomer(c1);
 				
 				t.setTotal(tot);

@@ -63,10 +63,12 @@ public class Transactions extends Page {
 			date = rs.getString("date");
 			
 			Products p1 = new Products();
-			p1.setId(rs.getInt("products"));
+			p1.getdatafromdb(rs.getInt("products"));
+			product = p1;
 			
 			Customers c1  = new Customers();
-			c1.setId(rs.getInt("customer"));
+			c1.getdatafromdb(rs.getInt("customers"));
+			customer = c1;
 			
 			total = rs.getInt("total");
 		}
@@ -88,21 +90,21 @@ public class Transactions extends Page {
 			date = rs.getString("date");
 			
 			Products p1 = new Products();
-			p1.setId(rs.getInt("products"));
+			p1.getdatafromdb(rs.getInt("products"));
 			
 			Customers c1  = new Customers();
-			c1.setId(rs.getInt("customer"));
+			c1.getdatafromdb(rs.getInt("customers"));
 			
 			total = rs.getInt("total");
 			
-			html += "<tr><th scope=\"row\">"+id+"</th><td>"+date+"</td><td>"+product.getName()+"</td><td>"+total+"</td>"+createBtns(id, "transactions")+"</tr>";
+			html += "<tr><th scope=\"row\">"+id+"</th><td>"+date+"</td><td>"+p1.getName()+"</td><td>"+c1.getName()+"</td><td>"+total+"</td>"+createBtns(id, "transactions")+"</tr>";
 		}
 		
 		return html;
 	}
 	
 	public String createquery() {
-		return "INSERT INTO `transactions` (`id`, `date`, `products`, `customer`, `total`) VALUES (null,\""+ this.date+"\",\""+ this.product.getName()+"\",\""+ this.customer.getName()+"\","+ this.total+"\");";
+		return "INSERT INTO `transactions` (`id`, `date`, `products`, `customers`, `total`) VALUES (null,\""+ this.date+"\",\""+ this.product.getId()+"\",\""+ this.customer.getId()+"\",\""+ this.total+"\");";
 	}
 	
 	public String deletequery() {
