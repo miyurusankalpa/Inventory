@@ -65,7 +65,7 @@ public class Customers extends Page {
 		while (rs.next()) {
 			customersid = rs.getInt("id");
 			name = rs.getString("customers_name");
-			address = rs.getString("customers_name");
+			address = rs.getString("address");
 			email = rs.getString("email");
 			contact = rs.getInt("contact");
 		}

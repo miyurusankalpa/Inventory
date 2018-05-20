@@ -6,7 +6,7 @@
 		<%
 			out.println("Edit Products");
 		%>
-	<a href="/Inventory/list/product.jsp" class="btn btn-lg align-right btn-info"><i class="fa fa-list"></i> list</a>
+	<a href="/Inventory/list/products.jsp" class="btn btn-lg align-right btn-info"><i class="fa fa-list"></i> list</a>
 	</h1><br>
 	<%
 		String s = request.getParameter("id");
