@@ -25,10 +25,10 @@
 			name="date" placeholder="enter a date"  value="<% out.print(t.getDate()); %>"> <br>
 		  <select class="form-control" name="products">
 		  <option value="" disabled selected hidden>enter a product id</option>
-		    <option>1</option>
-		    <option>2</option>
-		    <option>3</option>
-		    <option>4</option>
+		    <%
+		    Products p = new Products(); 
+		    out.print(p.getproducts(t.getId()));
+		    %>
 		  </select>
 		<br>
 		<input type="number" class="form-control"

@@ -43,9 +43,9 @@ public class Transactions extends Page {
 		return total;
 	}
 	
-	public void getdatafromdb(int id) throws SQLException {
+	public void getdatafromdb(int i) throws SQLException {
 		test c = new test();
-		ResultSet rs = c.getdata("SELECT * FROM oop.transactions WHERE id='"+id+"';");
+		ResultSet rs = c.getdata("SELECT * FROM oop.transactions WHERE id='"+i+"';");
 
 		while (rs.next()) {
 			id = rs.getInt("id");

@@ -77,6 +77,26 @@ public class Products extends Page {
 
 		return html;
 	}
+	
+	public String getproducts(int select) throws SQLException {
+		test c = new test();
+		ResultSet rs = c.getdata("SELECT * FROM oop.products;");
+		
+		String html = "";
+		String s = "";
+		
+		while (rs.next()) {
+			productid = rs.getInt("id");
+			name = rs.getString("products_name");
+			qty = rs.getInt("quantity");
+			price = rs.getInt("price");
+			
+			if(select==productid) s = "selected";  else s = "";
+			html += "<option value=\""+ productid +"\" "+s+">" + name + "</<option>";
+		}
+
+		return html;
+	}
 
 	public String deletequery() {
 		return "DELETE FROM `products` WHERE id='" + this.productid + "'";

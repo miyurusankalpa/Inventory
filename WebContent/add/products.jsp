@@ -16,7 +16,7 @@
 		  <input type="number" class="form-control"
 			name="qty" placeholder="enter a qty"> <br>
 		 <input type="number" class="form-control"
-			name="price" placeholder="enter a pricw"> <br>
+			name="price" placeholder="enter a price"> <br>
 		 <input
 			type="submit" class="btn btn-primary float-right" value="Add">
 	</form>
