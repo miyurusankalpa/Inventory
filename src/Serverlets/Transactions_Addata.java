@@ -36,14 +36,22 @@ public class Transactions_Addata extends HttpServlet {
 				test c = new test();
 
 				Transactions t = new Transactions();
-
+				Products p1 = new Products();
+				Customers c1 = new Customers();
+				
 				String date = request.getParameter("date");
 				int pid = Integer.parseInt(request.getParameter("products"));
+				int cid = Integer.parseInt(request.getParameter("customers"));
 				int tot = Integer.parseInt(request.getParameter("total"));
-				
-				
+
 				t.setDate(date);
-				t.setProducts(pid);
+				
+				p1.setId(pid);
+				t.setProduct(p1);
+				
+				c1.setId(cid);
+				t.setCustomer(c1);
+				
 				t.setTotal(tot);
 				
 				String query = t.createquery();

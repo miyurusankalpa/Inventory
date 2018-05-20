@@ -31,9 +31,10 @@ CREATE TABLE `oop`.`customers` (
   `contact` VARCHAR(45) NULL,
   PRIMARY KEY (`id`));
   
-  CREATE TABLE `oop`.`transactions` (
+CREATE TABLE `oop`.`transactions` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `date` VARCHAR(45) NULL,
   `products` INT NULL,
   `total` INT NULL,
+  `customers` INT NULL,
   PRIMARY KEY (`id`));

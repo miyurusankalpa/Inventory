@@ -80,9 +80,7 @@ public class Customers extends Page {
 		html = "";
 		
 		while(rs.next())
-		{
-			//rs.next();
-			
+		{	
 			customersid = rs.getInt("id");
 			name = rs.getString("customers_name");
 			address = rs.getString("address");
@@ -95,6 +93,25 @@ public class Customers extends Page {
 		return html;
 	}
 
+
+	public String getcustomers(int select) throws SQLException {
+		test c = new test();
+		ResultSet rs = c.getdata("SELECT * FROM oop.customers;");
+		
+		String html = "";
+		String s = "";
+		
+		while (rs.next()) {
+			customersid = rs.getInt("id");
+			name = rs.getString("customers_name");
+			
+			if(select==customersid) s = "selected";  else s = "";
+			html += "<option value=\""+ customersid +"\" "+s+">" + name + "</<option>";
+		}
+
+		return html;
+	}
+	
 	public String createquery() {
 		return "INSERT INTO `oop`.`customers` (`id`, `customers_name`, `address`, `email`, `contact`) VALUES (null,\""+ this.name+"\",\""+ this.address+"\",\""+ this.email+"\",\""+ this.contact+"\");";
 	    }

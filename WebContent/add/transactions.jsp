@@ -1,4 +1,4 @@
-<%@page import="test.Products"%>
+<%@page import="test.*" %>
 <% Page.setTitle("Add Transactions");  %>
 <jsp:directive.include file="../header.jsp" />
 <div class="container">
@@ -14,10 +14,18 @@
 		 <input type="date" class="form-control"
 			name="date" placeholder="enter a date"> <br>
 		  <select class="form-control" name="products">
-		  <option value="" disabled selected hidden>enter a product id</option>
+		  <option value="" disabled selected hidden>select a product</option>
 		    <%
 		    Products p = new Products(); 
 		    out.print(p.getproducts(0));
+		    %>
+		  </select>
+		<br>
+		<select class="form-control" name="customers">
+		  <option value="" disabled selected hidden>select a customer</option>
+		    <%
+		    Customers c = new Customers(); 
+		    out.print(c.getcustomers(0));
 		    %>
 		  </select>
 		<br>

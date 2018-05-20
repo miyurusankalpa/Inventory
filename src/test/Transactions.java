@@ -3,13 +3,16 @@ package test;
 import java.sql.*;
 
 import database.test;
+import test.Customers;
+import test.Products;
 
 public class Transactions extends Page {
 	
 	private int id;
 	private String date;
-	private int products;
 	private int total;
+	private Products product;
+	private Customers customer;
 	
 	public void setId(int i) {
 		id = i;
@@ -19,12 +22,16 @@ public class Transactions extends Page {
 		date = pdate;
 	}
 
-	public void setProducts(int pro) {
-		products = pro;
+	public void setProduct(Products pro) {
+		product = pro;
 	}
 	
 	public void setTotal(int tot) {
 		total = tot;
+	}
+
+	public void setCustomer(Customers c) {
+		customer = c;
 	}
 	
 	public int getId() {
@@ -35,12 +42,16 @@ public class Transactions extends Page {
 		return date;
 	}
 
-	public int getProducts() {
-		return products;
+	public Products getProduct() {
+		return product;
 	}
 	
 	public int getTotal() {
 		return total;
+	}
+	
+	public Customers getCustomer() {
+		return customer;
 	}
 	
 	public void getdatafromdb(int i) throws SQLException {
@@ -50,7 +61,13 @@ public class Transactions extends Page {
 		while (rs.next()) {
 			id = rs.getInt("id");
 			date = rs.getString("date");
-			products = rs.getInt("products");
+			
+			Products p1 = new Products();
+			p1.setId(rs.getInt("products"));
+			
+			Customers c1  = new Customers();
+			c1.setId(rs.getInt("customer"));
+			
 			total = rs.getInt("total");
 		}
 	}
@@ -69,17 +86,23 @@ public class Transactions extends Page {
 			
 			id = rs.getInt("id");
 			date = rs.getString("date");
-			products = rs.getInt("products");
+			
+			Products p1 = new Products();
+			p1.setId(rs.getInt("products"));
+			
+			Customers c1  = new Customers();
+			c1.setId(rs.getInt("customer"));
+			
 			total = rs.getInt("total");
 			
-			html += "<tr><th scope=\"row\">"+id+"</th><td>"+date+"</td><td>"+products+"</td><td>"+total+"</td>"+createBtns(id, "transactions")+"</tr>";
+			html += "<tr><th scope=\"row\">"+id+"</th><td>"+date+"</td><td>"+product.getName()+"</td><td>"+total+"</td>"+createBtns(id, "transactions")+"</tr>";
 		}
 		
 		return html;
 	}
 	
 	public String createquery() {
-		return "INSERT INTO `transactions` (`id`, `date`, `products`, `total`) VALUES (null,\""+ this.date+"\",\""+ this.products+"\",\""+ this.total+"\");";
+		return "INSERT INTO `transactions` (`id`, `date`, `products`, `customer`, `total`) VALUES (null,\""+ this.date+"\",\""+ this.product.getName()+"\",\""+ this.customer.getName()+"\","+ this.total+"\");";
 	}
 	
 	public String deletequery() {
@@ -87,7 +110,7 @@ public class Transactions extends Page {
 	}
 	
 	public String editquery() {
-		return "UPDATE `transaction` SET date='" + this.date + "', products='" + this.products + "', total='"
+		return "UPDATE `transaction` SET date='" + this.date + "', products='" + this.product.getId() + "', customers ='" + this.customer.getId() + "', total='"
 				+ this.total + "' WHERE id = '" + this.id + "'";
 	}
 }
