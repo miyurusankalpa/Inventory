@@ -34,7 +34,7 @@
 			<label>Email</label>
 		<input type="text" class="form-control"
 			name="email" placeholder="enter a email" value="<% out.print(c.getEmail()); %>"> <br>
-			<label>Number</label>
+			<label>Contact Number</label>
 		<input type="number" class="form-control"
 			name="contact" placeholder="enter a contact" value="<% out.print(c.getContact()); %>"> <br>
 		 <button type="submit" class="btn btn-primary float-right" value="Add"><i class="fa fa-save"></i> Save</button>

@@ -45,7 +45,7 @@
 		    if (s != null) out.print(c.getcustomers(t.getCustomer().getId()));
 		    %>
 		  </select>
-		<br><label>Number</label>
+		<br><label>Quantity</label>
 		<input type="number" class="form-control"
 			name="total" placeholder="enter a total" value="<% out.print(t.getTotal()); %>"> <br>
 		 <button type="submit" class="btn btn-primary float-right" value="Add"><i class="fa fa-save"></i> Save</button>

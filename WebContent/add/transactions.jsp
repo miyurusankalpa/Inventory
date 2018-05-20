@@ -33,7 +33,7 @@
 		    %>
 		  </select>
 		<br>
-		<label>Number</label>
+		<label>Quantity</label>
 		<input type="number" class="form-control"
 			name="total" placeholder="enter a total value"> <br>
 		 <button type="submit" class="btn btn-primary float-right" value="Add"><i class="fa fa-plus"></i> Add</button>
