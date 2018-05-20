@@ -24,6 +24,7 @@ Page.setTitle("Customers List");
 				<th scope="col">contact</th>
 				<th scope="col"></th>
 				<th scope="col"></th>
+				<th scope="col"></th>
 			</tr>
 		</thead>
 		<tbody>

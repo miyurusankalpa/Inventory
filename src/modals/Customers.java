@@ -87,7 +87,7 @@ public class Customers extends Page {
 			email = rs.getString("email");
 			contact = rs.getInt("contact");
 			
-			html += "<tr><th scope=\"row\">"+customersid+"</th><td>"+name+"</td><td>"+address+"</td><td>"+email+"</td><td>"+contact+"</td>"+createBtns(customersid, "customers")+"</tr>";
+			html += "<tr><th scope=\"row\">"+customersid+"</th><td>"+name+"</td><td>"+address+"</td><td>"+email+"</td><td>"+contact+"</td>"+ createbtnreport(customersid) + createBtns(customersid, "customers")+"</tr>";
 		}
 		
 		return html;
@@ -110,6 +110,10 @@ public class Customers extends Page {
 		}
 
 		return html;
+	}
+	
+	public String createbtnreport(int i) {
+		return "<td><a href=\"/Inventory/reports/customers.jsp?id="+i+"\" class=\"btn btn-dark\"><i class=\"fa fa-list-alt\"></i> Report</a></td>";
 	}
 	
 	public String createquery() {

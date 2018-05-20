@@ -24,4 +24,23 @@ public class Reports {
 			
 			return html;
 	}
+	
+	public String productCustomer(int i) throws SQLException {
+		Database c = new Database();
+		ResultSet rs = c.getdata("SELECT SUM(total) as total, products FROM transactions WHERE customers='"+i+"' GROUP BY products;");
+
+		String html = "";
+
+		while (rs.next()) {
+			int total = rs.getInt("total");
+			int products = rs.getInt("products");
+
+			Products p1 = new Products();
+			p1.getdatafromdb(products);
+			
+			html += "<tr><td scope=\"row\">" + p1.getName() + "</td><td>" + p1.getPrice() + "</td><td>" + total + "</td></tr>";
+		}
+		
+		return html;
+}
 }

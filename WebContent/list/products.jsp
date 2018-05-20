@@ -33,6 +33,7 @@ Page.setTitle("Products List");
 				<th scope="col">price</th>
 				<th scope="col"></th>
 				<th scope="col"></th>
+				<th scope="col"></th>
 			</tr>
 		</thead>
 		<tbody>

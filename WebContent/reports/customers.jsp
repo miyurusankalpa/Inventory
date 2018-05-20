@@ -1,24 +1,24 @@
 <%@page import="modals.*"%>
 
 <%
-Page.setTitle("Products Report");
+Page.setTitle("Customer Report");
 %>
 <jsp:directive.include file="../header.jsp" />
 <div class="container">
 	<h1>
 		<%
-			out.println("Products Report - ");
+			out.println("Customer Report - ");
 		
 		String s = request.getParameter("id");
 		
 		Reports r = new Reports();
-		Products p = new Products();
+		Customers c = new Customers();
 		
 		int i = Integer.parseInt(s);
 		
-		p.getdatafromdb(i);
+		c.getdatafromdb(i);
 		
-		out.println(p.getName());
+		out.println(c.getName());
 		
 		if (s == null)
 			out.print("<h3 class=\"alert alert-danger\">Empty ID</h3>");
@@ -33,7 +33,7 @@ Page.setTitle("Products Report");
 	<table class="table table-hover table-bordered text-center">
 		<thead class="thead-dark">
 			<tr>
-				<th scope="col">Customers</th>
+				<th scope="col">Product</th>
 				<th scope="col">Address</th>
 				<th scope="col">Total</th>
 			</tr>
@@ -42,7 +42,7 @@ Page.setTitle("Products Report");
 			<%
 				//int i = Integer.parseInt(s);
 			
-				out.print(r.productReport(i));
+				out.print(r.productCustomer(i));
 			%>
 		</tbody>
 	</table>

@@ -72,12 +72,12 @@ public class Products extends Page {
 			price = rs.getInt("price");
 
 			html += "<tr><th scope=\"row\">" + productid + "</th><td>" + name + "</td><td>" + qty + "</td><td>" + price
-					+ "</td>" + createBtns(productid, "products") + "</tr>";
+					+ "</td>" + createbtnreport(productid) + createBtns(productid, "products") + "</tr>";
 		}
 
 		return html;
 	}
-	
+
 	public String getproducts(int select) throws SQLException {
 		Database c = new Database();
 		ResultSet rs = c.getdata("SELECT * FROM oop.products;");
@@ -96,6 +96,10 @@ public class Products extends Page {
 		}
 
 		return html;
+	}
+	
+	public String createbtnreport(int i) {
+		return "<td><a href=\"/Inventory/reports/products.jsp?id="+i+"\" class=\"btn btn-dark\"><i class=\"fa fa-list-alt\"></i> Report</a></td>";
 	}
 
 	public String deletequery() {
