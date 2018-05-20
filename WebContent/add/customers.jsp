@@ -1,4 +1,3 @@
-
 <% Page.setTitle("Add Customers");  %>
 <jsp:directive.include file="../header.jsp" />
 <div class="container">

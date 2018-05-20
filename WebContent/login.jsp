@@ -1,4 +1,3 @@
-
 <% Page.setTitle("Login");  %>
 <jsp:directive.include file="header.jsp" />
 <div class="container">

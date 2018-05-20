@@ -1,41 +1,35 @@
-<%@page import="modals.*"%>
-
-<%
-Page.setTitle("Customers");
-%>
+<%@page import="modals.*" %>
+<% Page.setTitle("Edit Customers");  %>
 <jsp:directive.include file="../header.jsp" />
 <div class="container">
 	<h1>
 		<%
-			out.println("customers details");
+			out.println("customers edit");
 		%>
-		<a href="/Inventory/add/customers.jsp" class="btn btn-lg align-right btn-info">add</a>
+	<a href="/Inventory/list/customers.jsp" class="btn btn-lg align-right btn-info">list</a>
 	</h1>
+	<%
+		String s = request.getParameter("id");
+		int i = Integer.parseInt(s);
+		Customers c = new Customers(); 
+		c.getdatafromdb(i);
+		
+	%>
 	<br>
-
-
-	<table class="table table-hover table-bordered text-center">
-		<thead class="thead-dark">
-			<tr>
-				<th scope="col">#</th>
-				<th scope="col">name</th>
-				<th scope="col">address</th>
-				<th scope="col">email</th>
-				<th scope="col">contact</th>
-				<th scope="col"></th>
-				<th scope="col"></th>
-			</tr>
-		</thead>
-		<tbody>
-
-			<%
-				Customers cu = new Customers();
-
-				out.print(cu.getdata());
-			%>
-
-		</tbody>
-	</table>
+	<form action="/Inventory/Customers_Edit" method="post">
+	<input type="text" class="form-control"
+			name="id" placeholder="id" value="<% out.print(c.getId()); %>" readonly> <br>
+		 <input type="text" class="form-control"
+			name="name" placeholder="enter a name" value="<% out.print(c.getName()); %>"> <br>
+		  <input type="text" class="form-control"
+			name="address" placeholder="enter a address" value="<% out.print(c.getAddress()); %>"> <br>
+		<input type="text" class="form-control"
+			name="email" placeholder="enter a email" value="<% out.print(c.getEmail()); %>"> <br>
+		<input type="number" class="form-control"
+			name="contact" placeholder="enter a contact" value="<% out.print(c.getContact()); %>"> <br>
+		 <input
+			type="submit" class="btn btn-primary float-right" value="Edit">
+	</form>
 
 </div>
 <jsp:directive.include file = "../footer.jsp" />
