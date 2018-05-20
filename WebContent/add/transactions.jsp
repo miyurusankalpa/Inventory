@@ -4,15 +4,18 @@
 <div class="container">
 	<h1>
 		<%
-			out.println("transactions add");
+			out.println("Add Transactions");
 		%>
-	<a href="/Inventory/list/transactions.jsp" class="btn btn-lg align-right btn-info">list</a>
+	<a href="/Inventory/list/transactions.jsp" class="btn btn-lg align-right btn-info"><i class="fa fa-list"></i> list</a>
 	</h1>
 	
 	<br>
+	<div class="card card-body bg-light">
 	<form action="/Inventory/transactions_addata" method="post">
+		<label>Date</label>
 		 <input type="date" class="form-control"
 			name="date" placeholder="enter a date"> <br>
+			<label>Product</label>
 		  <select class="form-control" name="products">
 		  <option value="" disabled selected hidden>select a product</option>
 		    <%
@@ -21,6 +24,7 @@
 		    %>
 		  </select>
 		<br>
+		<label>Customer</label>
 		<select class="form-control" name="customers">
 		  <option value="" disabled selected hidden>select a customer</option>
 		    <%
@@ -29,11 +33,11 @@
 		    %>
 		  </select>
 		<br>
+		<label>Number</label>
 		<input type="number" class="form-control"
-			name="total" placeholder="enter a total"> <br>
-		 <input
-			type="submit" class="btn btn-primary float-right" value="Add">
+			name="total" placeholder="enter a total value"> <br>
+		 <button type="submit" class="btn btn-primary float-right" value="Add"><i class="fa fa-plus"></i> Add</button>
 	</form>
-
+ </div>
 </div>
 <jsp:directive.include file = "../footer.jsp" />

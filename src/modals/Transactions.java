@@ -1,10 +1,9 @@
 package modals;
 
-import java.sql.*;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import database.Database;
-import modals.Customers;
-import modals.Products;
 
 public class Transactions extends Page {
 	

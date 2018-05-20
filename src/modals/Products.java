@@ -49,8 +49,6 @@ public class Products extends Page {
 
 		while (rs.next()) {
 			productid = rs.getInt("id");
-			System.out.println(rs.getInt("id"));
-
 			name = rs.getString("products_name");
 			qty = rs.getInt("quantity");
 			price = rs.getInt("price");

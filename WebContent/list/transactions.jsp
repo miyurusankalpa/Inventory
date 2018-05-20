@@ -1,13 +1,13 @@
 <%@page import="modals.*"%>
 
-<% Page.setTitle("Transactions"); %>
+<% Page.setTitle("Transactions List"); %>
 <jsp:directive.include file="../header.jsp" />
 <div class="container">
 	<h1>
 		<%
-			out.println("transactions details");
+			out.println("Transactions List");
 		%>
-		<a href="/Inventory/add/transactions.jsp" class="btn btn-lg align-right btn-info">add</a>
+		<a href="/Inventory/add/transactions.jsp" class="btn btn-lg align-right btn-info"><i class="fa fa-plus"></i> add</a>
 	</h1>
 	<br>
 
