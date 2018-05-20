@@ -1,4 +1,4 @@
-<%@page import="test.*"%>
+<%@page import="modals.*"%>
 
 <%
 Page.setTitle("Customers");

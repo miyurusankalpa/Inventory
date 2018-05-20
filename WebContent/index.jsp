@@ -1,4 +1,4 @@
-<%@page import="database.test"%>
+<%@page import="database.Database"%>
 <%
 	Page.setTitle("Welcome");
 %>

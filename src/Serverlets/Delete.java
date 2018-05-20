@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import database.test;
-import test.*;
+import database.Database;
+import modals.*;
 
 /**
  * Servlet implementation class Delete
@@ -38,7 +38,7 @@ public class Delete extends HttpServlet {
 		
 		HttpSession session = request.getSession(true);
 		
-		test con = new test();
+		Database con = new Database();
 		
 		String query = null;
 		

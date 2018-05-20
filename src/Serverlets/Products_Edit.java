@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import database.test;
-import test.Products;
+import database.Database;
+import modals.Products;
 
 /**
  * Servlet implementation class Products_Edit
@@ -43,7 +43,7 @@ public class Products_Edit extends HttpServlet {
 		
 		HttpSession session = request.getSession(true);
 		
-		test c = new test();
+		Database c = new Database();
 
 		Products p = new Products();
 		

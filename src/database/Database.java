@@ -2,7 +2,7 @@ package database;
 
 import java.sql.*;
 
-public class test {
+public class Database {
 
 	public String testc() throws ClassNotFoundException {
 		

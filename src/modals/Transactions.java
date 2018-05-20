@@ -1,10 +1,10 @@
-package test;
+package modals;
 
 import java.sql.*;
 
-import database.test;
-import test.Customers;
-import test.Products;
+import database.Database;
+import modals.Customers;
+import modals.Products;
 
 public class Transactions extends Page {
 	
@@ -55,7 +55,7 @@ public class Transactions extends Page {
 	}
 	
 	public void getdatafromdb(int i) throws SQLException {
-		test c = new test();
+		Database c = new Database();
 		ResultSet rs = c.getdata("SELECT * FROM oop.transactions WHERE id='"+i+"';");
 
 		while (rs.next()) {
@@ -73,7 +73,7 @@ public class Transactions extends Page {
 	}
 	
 	public String getdata() throws SQLException {
-		test c = new test();
+		Database c = new Database();
 		ResultSet rs = c.getdata("SELECT * FROM oop.transactions;");
 		
 		String html;

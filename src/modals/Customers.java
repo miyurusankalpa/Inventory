@@ -1,8 +1,8 @@
-package test;
+package modals;
 
 import java.sql.*;
 
-import database.test;
+import database.Database;
 
 public class Customers extends Page {
 	
@@ -59,7 +59,7 @@ public class Customers extends Page {
 	}
 	
 	public void getdatafromdb(int id) throws SQLException {
-		test c = new test();
+		Database c = new Database();
 		ResultSet rs = c.getdata("SELECT * FROM oop.customers WHERE id='"+id+"';");
 
 		while (rs.next()) {
@@ -72,7 +72,7 @@ public class Customers extends Page {
 	}
 	
 	public String getdata() throws SQLException {
-		test cu = new test();
+		Database cu = new Database();
 		
 		ResultSet rs = cu.getdata("SELECT * FROM oop.customers;");
 		
@@ -95,7 +95,7 @@ public class Customers extends Page {
 
 
 	public String getcustomers(int select) throws SQLException {
-		test c = new test();
+		Database c = new Database();
 		ResultSet rs = c.getdata("SELECT * FROM oop.customers;");
 		
 		String html = "";

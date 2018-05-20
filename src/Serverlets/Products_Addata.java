@@ -1,7 +1,5 @@
 package Serverlets;
 
-import test.*;
-
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,7 +8,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import database.test;
+import database.Database;
+import modals.*;
 
 /**
  * Servlet implementation class Addata
@@ -34,7 +33,7 @@ public class Products_Addata extends HttpServlet {
 		// TODO Auto-generated method stub
 		HttpSession session = request.getSession(true);
 		
-		test c = new test();
+		Database c = new Database();
 
 		Products p = new Products();
 

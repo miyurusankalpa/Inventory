@@ -1,16 +1,10 @@
+<%@page import="modals.*"%>
 <%
 	Page.setTitle("Dashboard");
 %>
 <jsp:directive.include file="header.jsp" />
 <div class="container">
-	<h1>
-		<%
-			out.println("Welcome to the dashboard");
-		%>
-	</h1>
-	<br>
-	<%
-
+<%
 		if(session.getAttribute("result") != null )	{
 			
 			out.print("<div class=\"alert alert-success\">");
@@ -19,7 +13,14 @@
 			out.print("</div>");
 			
 		}
-	%>
+%>
+	
+	<h1>
+		<%
+			out.println("Welcome to the dashboard");
+		%>
+	</h1>
+	<br>
 
 	<div>
 		<a href="list/products.jsp" class="btn btn-info btn-lg btn-block"><i class="fa fa-box"></i> Products</a>

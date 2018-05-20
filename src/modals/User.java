@@ -1,8 +1,8 @@
-package test;
+package modals;
 
 import java.sql.*;
 
-import database.test;
+import database.Database;
 
 public class User {
 
@@ -15,7 +15,7 @@ public class User {
 
 
 	public static boolean checkLogin(String username, String password) {
-		test c = new test();
+		Database c = new Database();
 
 		ResultSet rs = c.getdata(
 				"SELECT * FROM oop.users WHERE username=\"" + username + "\" AND password = \"" + password + "\";");

@@ -1,4 +1,4 @@
-package test;
+package modals;
 
 public class Page {
 	

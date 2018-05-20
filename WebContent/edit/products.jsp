@@ -1,4 +1,4 @@
-<%@page import="test.*" %>
+<%@page import="modals.*" %>
 <% Page.setTitle("Edit Products");  %>
 <jsp:directive.include file="../header.jsp" />
 <div class="container">

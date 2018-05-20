@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import database.test;
-import test.*;
+import database.Database;
+import modals.*;
 
 /**
  * Servlet implementation class customers_Adddata
@@ -33,7 +33,7 @@ public class Transactions_Addata extends HttpServlet {
 		// TODO Auto-generated method stub
 				HttpSession session = request.getSession(true);
 				
-				test c = new test();
+				Database c = new Database();
 
 				Transactions t = new Transactions();
 				Products p1 = new Products();
