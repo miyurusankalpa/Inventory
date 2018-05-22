@@ -34,7 +34,7 @@ Page.setTitle("Customer Report");
 		<thead class="thead-dark">
 			<tr>
 				<th scope="col">Product</th>
-				<th scope="col">Address</th>
+				<th scope="col">Price</th>
 				<th scope="col">Total</th>
 			</tr>
 		</thead>
