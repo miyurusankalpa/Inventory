@@ -14,6 +14,7 @@ public class Transactions extends Page implements Inventory {
 	private Products product;
 	private Customers customer;
 	
+	/* Setters for tranactions */
 	public void setId(int i) {
 		id = i;
 	}
@@ -34,6 +35,7 @@ public class Transactions extends Page implements Inventory {
 		customer = c;
 	}
 	
+	/* Getters for tranactions */
 	public int getId() {
 		return id;
 	}
@@ -54,6 +56,7 @@ public class Transactions extends Page implements Inventory {
 		return customer;
 	}
 	
+	/* get date from the db and populate the variables */
 	public void getdatafromdb(int i) throws SQLException {
 		Database c = Database.getInstance();
 		ResultSet rs = c.getdata("SELECT * FROM oop.transactions WHERE id='"+i+"';");
@@ -74,6 +77,7 @@ public class Transactions extends Page implements Inventory {
 		}
 	}
 	
+	/* get data from the database and print in a table */
 	public String getdata() throws SQLException {
 		Database c = Database.getInstance();
 		ResultSet rs = c.getdata("SELECT * FROM oop.transactions;");
