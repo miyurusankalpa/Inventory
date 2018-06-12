@@ -92,8 +92,9 @@ public class Customers extends Page implements Inventory {
 		return contact;
 	}
 	
-	
-	
+	/**
+	 * @set id and collect data from DB and create object
+	 */
 	public void getdatafromdb(int id) throws SQLException {
 		Database c = Database.getInstance();
 		ResultSet rs = c.getdata("SELECT * FROM oop.customers WHERE id='"+id+"';");
@@ -106,6 +107,10 @@ public class Customers extends Page implements Inventory {
 			contact = rs.getInt("contact");
 		}
 	}
+	
+	/**
+	 * @print customer data
+	 */
 	
 	public String getdata() throws SQLException {
 		Database cu = Database.getInstance();
@@ -128,9 +133,13 @@ public class Customers extends Page implements Inventory {
 		
 		return html;
 	}
-
-
-	public String getcustomers(int select) throws SQLException {
+	
+	
+	
+	/**
+	 * @customer list 
+	 */
+     public String getcustomers(int select) throws SQLException {
 		Database c = Database.getInstance();
 		ResultSet rs = c.getdata("SELECT * FROM oop.customers;");
 		
@@ -147,6 +156,13 @@ public class Customers extends Page implements Inventory {
 
 		return html;
 	}
+     
+     
+     
+     
+     /**
+ 	 * @ database create query,delete query, edit query function
+ 	 */
 	
 	public String createquery() {
 		return "INSERT INTO `oop`.`customers` (`id`, `customers_name`, `address`, `email`, `contact`) VALUES (null,\""+ this.name+"\",\""+ this.address+"\",\""+ this.email+"\",\""+ this.contact+"\");";
@@ -159,6 +175,13 @@ public class Customers extends Page implements Inventory {
 	public String editquery() {
 		return "UPDATE `customers` SET customers_name='" + this.name + "', address='" + this.address + "', email='"+ this.email + "', contact='"+ this.contact + "' WHERE id = '" + this.customersid + "'";
 	}
+	
+	
+	
+	
+	/**
+	 * @endpoint validation
+	 */
 	
 	public void validate() throws ValidateException {
 
@@ -174,7 +197,7 @@ public class Customers extends Page implements Inventory {
 		if (!email.contains("@")) 
 			 throw new ValidateException("Please specify a valid email");
 		
-		if (contact<0)
+		if (contact<999999)
 			 throw new ValidateException("Please specify a valid contact number");	
 	}
 }
