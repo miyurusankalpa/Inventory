@@ -1,6 +1,6 @@
 package modals;
 
-public class Page {
+public abstract class Page {
 	
 	private static String title;
 	

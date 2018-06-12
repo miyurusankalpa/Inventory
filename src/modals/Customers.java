@@ -4,7 +4,7 @@ import java.sql.*;
 
 import database.Database;
 
-public class Customers extends Page {
+public class Customers extends Page implements Inventory {
 	
 	private int customersid;
 	private String name;

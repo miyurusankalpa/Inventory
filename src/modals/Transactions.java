@@ -5,7 +5,7 @@ import java.sql.SQLException;
 
 import database.Database;
 
-public class Transactions extends Page {
+public class Transactions extends Page implements Inventory {
 	
 	private int id;
 	private String date;
