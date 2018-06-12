@@ -12,51 +12,86 @@ public class Customers extends Page {
 	private String email;
 	private int contact;
 	
+	/**
+	 * @param customersid the customersid to set
+	 */
+	
 	public void setId(int customersid)
 	{
 		this.customersid=customersid;
 	}
 	
+	
+	/**
+	 * @return the getid
+	 */
 	public int getId()
 	{
 		return customersid;
 	}
 	
+	/**
+	 * @param name the name to set
+	 */
 	public void setName(String cname) {
 		name = cname;
 	}
 	
+	
+	/**
+	 * @return the name
+	 */
 	public String getName()
 	{
 		return name;
 	}
 	
+	/**
+	 * @param address the address to set
+	 */
 	public void setAddress(String caddress) {
 		address = caddress;
 	}
 	
+	/**
+	 * @return the address
+	 */
 	public String getAddress()
 	{
 		return address;
 	}
 	
+	/**
+	 * @param email the email to set
+	 */
 	public void setEmail(String cemail) {
 		email = cemail;
 	}
 	
+	/**
+	 * @return the email
+	 */
 	public String getEmail()
 	{
 		return email;
 	}
 	
+	/**
+	 * @param email the contact to set
+	 */
 	public void setContact(int ccontact) {
 		contact = ccontact;
 	}
 	
+	/**
+	 * @return connect
+	 */
 	public int getContact()
 	{
 		return contact;
 	}
+	
+	
 	
 	public void getdatafromdb(int id) throws SQLException {
 		Database c = new Database();
