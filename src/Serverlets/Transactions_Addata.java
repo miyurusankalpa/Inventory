@@ -35,7 +35,7 @@ public class Transactions_Addata extends HttpServlet {
 		// TODO Auto-generated method stub
 				HttpSession session = request.getSession(true);
 				
-				Database c = new Database();
+				Database c = Database.getInstance();
 
 				Transactions t = new Transactions();
 				Products p1 = new Products();

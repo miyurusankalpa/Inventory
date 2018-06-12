@@ -43,7 +43,7 @@ public class Products_Edit extends HttpServlet {
 		
 		HttpSession session = request.getSession(true);
 		
-		Database c = new Database();
+		Database c = Database.getInstance();
 
 		Products p = new Products();
 		

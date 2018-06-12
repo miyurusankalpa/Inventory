@@ -44,7 +44,7 @@ public class Products extends Page {
 	}
 	
 	public void getdatafromdb(int id) throws SQLException {
-		Database c = new Database();
+		Database c = Database.getInstance();
 		ResultSet rs = c.getdata("SELECT * FROM oop.products WHERE id='"+id+"';");
 
 		while (rs.next()) {
@@ -56,7 +56,7 @@ public class Products extends Page {
 	}
 
 	public String getdata() throws SQLException {
-		Database c = new Database();
+		Database c = Database.getInstance();
 		ResultSet rs = c.getdata("SELECT * FROM oop.products;");
 
 		String html;
@@ -79,7 +79,7 @@ public class Products extends Page {
 	}
 
 	public String getproducts(int select) throws SQLException {
-		Database c = new Database();
+		Database c = Database.getInstance();
 		ResultSet rs = c.getdata("SELECT * FROM oop.products;");
 		
 		String html = "";

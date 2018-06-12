@@ -27,7 +27,7 @@ public class User {
 
 
 	public boolean checkLogin(String username, String password) {
-		Database c = new Database();
+		Database c = Database.getInstance();
 
 		ResultSet rs = c.getdata(
 				"SELECT * FROM oop.users WHERE username=\"" + username + "\" AND password = \"" + password + "\";");

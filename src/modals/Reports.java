@@ -7,7 +7,7 @@ import database.Database;
 
 public class Reports {
 	public String productReport(int i) throws SQLException {
-			Database c = new Database();
+			Database c = Database.getInstance();
 			ResultSet rs = c.getdata("SELECT SUM(total) as total, customers as customer_id FROM transactions WHERE products='"+i+"' GROUP BY customers;");
 
 			String html = "";
@@ -26,7 +26,7 @@ public class Reports {
 	}
 	
 	public String productCustomer(int i) throws SQLException {
-		Database c = new Database();
+		Database c = Database.getInstance();
 		ResultSet rs = c.getdata("SELECT SUM(total) as total, products as product_id FROM transactions WHERE customers='"+i+"' GROUP BY products;");
 
 		String html = "";

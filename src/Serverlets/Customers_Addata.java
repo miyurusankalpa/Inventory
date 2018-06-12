@@ -33,7 +33,7 @@ public class Customers_Addata extends HttpServlet {
 		// TODO Auto-generated method stub
 				HttpSession session = request.getSession(true);
 				
-				Database c = new Database();
+				Database c = Database.getInstance();
 
 				Customers cu = new Customers();
 

@@ -38,7 +38,7 @@ public class Delete extends HttpServlet {
 		
 		HttpSession session = request.getSession(true);
 		
-		Database con = new Database();
+		Database con = Database.getInstance();
 		
 		String query = null;
 		

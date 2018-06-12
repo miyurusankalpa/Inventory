@@ -54,7 +54,7 @@ public class Transactions extends Page {
 	}
 	
 	public void getdatafromdb(int i) throws SQLException {
-		Database c = new Database();
+		Database c = Database.getInstance();
 		ResultSet rs = c.getdata("SELECT * FROM oop.transactions WHERE id='"+i+"';");
 
 		while (rs.next()) {
@@ -74,7 +74,7 @@ public class Transactions extends Page {
 	}
 	
 	public String getdata() throws SQLException {
-		Database c = new Database();
+		Database c = Database.getInstance();
 		ResultSet rs = c.getdata("SELECT * FROM oop.transactions;");
 		
 		String html;

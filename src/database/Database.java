@@ -3,26 +3,21 @@ package database;
 import java.sql.*;
 
 public class Database {
+	  private static Database instance = new Database();
+	  private Database(){}
+	  private Connection conn = null;
 
-	public String testc() throws ClassNotFoundException {
-		
-		Connection conn = connect();
-
-		if(conn!=null) {
-			return "Connected";
-		} else {
-			return "Error";
-		}
-	}
-	
+	  public static Database getInstance(){
+	     return instance;
+	 }
+	   
 	public Connection connect() throws ClassNotFoundException{
-		Connection conn = null;
 		final String DB_URL = "jdbc:mysql://localhost/oop";
 
 		Class.forName("com.mysql.jdbc.Driver");
 
 		try {
-			conn = DriverManager.getConnection(DB_URL, "test", "test");
+			if(conn==null) conn = DriverManager.getConnection(DB_URL, "test", "test");
 		} catch (SQLException e) {
 			e.getMessage();
 		}
@@ -31,20 +26,16 @@ public class Database {
 		return conn;
 	}
 	
-	//just tessting
 	
 	public String adddata(String sql)
 	{
 		try {
 			Connection con = this.connect();
-			
+		    //System.out.println(con);
 			try {
 				Statement sta = con.createStatement();
 				
-				
 				sta.executeUpdate(sql);
-				
-				
 				
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
@@ -65,7 +56,8 @@ public class Database {
 		ResultSet rs = null;
 		try {
 			Connection con = this.connect();
-			
+		     //System.out.println(con);
+
 			try {
 				Statement sta = con.createStatement();
 				

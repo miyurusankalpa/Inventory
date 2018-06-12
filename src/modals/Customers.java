@@ -94,7 +94,7 @@ public class Customers extends Page {
 	
 	
 	public void getdatafromdb(int id) throws SQLException {
-		Database c = new Database();
+		Database c = Database.getInstance();
 		ResultSet rs = c.getdata("SELECT * FROM oop.customers WHERE id='"+id+"';");
 
 		while (rs.next()) {
@@ -107,7 +107,7 @@ public class Customers extends Page {
 	}
 	
 	public String getdata() throws SQLException {
-		Database cu = new Database();
+		Database cu = Database.getInstance();
 		
 		ResultSet rs = cu.getdata("SELECT * FROM oop.customers;");
 		
@@ -130,7 +130,7 @@ public class Customers extends Page {
 
 
 	public String getcustomers(int select) throws SQLException {
-		Database c = new Database();
+		Database c = Database.getInstance();
 		ResultSet rs = c.getdata("SELECT * FROM oop.customers;");
 		
 		String html = "";
