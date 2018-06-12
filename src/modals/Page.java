@@ -12,6 +12,10 @@ public class Page {
 		return html;
 	}
 	
+	public String createbtnreport(int i,String page) {
+		return "<td><a href=\"/Inventory/reports/"+page+".jsp?id="+i+"\" class=\"btn btn-dark\"><i class=\"fa fa-list-alt\"></i> Report</a></td>";
+	}
+	
 	public static void setTitle(String t) {
 		title=t;
 	}
