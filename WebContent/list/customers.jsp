@@ -13,7 +13,17 @@ Page.setTitle("Customers List");
 	</h1>
 	<br>
 
+	<%
+		if (session.getAttribute("result") != null) {
 
+			out.print("<div class=\"alert alert-success\">");
+			out.println(session.getAttribute("result"));
+			session.removeAttribute("result");
+			out.print("</div>");
+
+		}
+	%>
+	
 	<table class="table table-hover table-bordered text-center">
 		<thead class="thead-dark">
 			<tr>

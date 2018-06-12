@@ -118,7 +118,7 @@ public class Customers extends Page {
 	
 	public String createquery() {
 		return "INSERT INTO `oop`.`customers` (`id`, `customers_name`, `address`, `email`, `contact`) VALUES (null,\""+ this.name+"\",\""+ this.address+"\",\""+ this.email+"\",\""+ this.contact+"\");";
-	    }
+	}
 
 	public String deletequery() {
 		return "DELETE FROM  `oop`.`customers` WHERE id=' "+this.customersid+"'";

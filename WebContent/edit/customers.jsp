@@ -33,7 +33,7 @@
 			name="address" placeholder="enter a address" value="<% out.print(c.getAddress()); %>"> <br>
 			<label>Email</label>
 		<input type="text" class="form-control"
-			name="email" placeholder="enter a email" value="<% out.print(c.getEmail()); %>"> <br>
+			name="email" placeholder="enter a email" value="<% out.print(c.getEmail()); %>" required pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}"> <br>
 			<label>Contact Number</label>
 		<input type="number" class="form-control"
 			name="contact" placeholder="enter a contact" value="<% out.print(c.getContact()); %>"> <br>

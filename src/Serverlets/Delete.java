@@ -42,6 +42,7 @@ public class Delete extends HttpServlet {
 		
 		String query = null;
 		
+		//checking tname to create objects using template design pattern
 		if(tname.equals("products"))
 		{
 			Products p = new Products();
@@ -65,12 +66,8 @@ public class Delete extends HttpServlet {
 			query = t.deletequery();
 			con.adddata(query);
 		} 
-		
-		
-	//String result = con.adddata(query);
-		
+				
 		session.setAttribute("result", "success delete data");
-		
 		
 		response.sendRedirect("/Inventory/list/"+tname+".jsp");
 	}

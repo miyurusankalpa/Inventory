@@ -9,12 +9,24 @@ public class User {
 	private String username;
 	private String password;
 
+	
+	//create an object of User
+	private static User instance = new User();
+
+	//make the constructor private so that this class cannot be instantiated
+	private User(){}
+	
+	//Get the only object available
+	public static User getInstance(){
+	     return instance;
+	}
+	   
 	public void setusername(String uname) {
 		username = uname;
 	}
 
 
-	public static boolean checkLogin(String username, String password) {
+	public boolean checkLogin(String username, String password) {
 		Database c = new Database();
 
 		ResultSet rs = c.getdata(

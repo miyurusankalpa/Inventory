@@ -33,18 +33,19 @@ public class Login extends HttpServlet {
 		// TODO Auto-generated method stub
 		HttpSession session = request.getSession(true);
 		
+		User us = User.getInstance();
+		
 		String user = request.getParameter("username");
 		String pass = request.getParameter("password");
 		
-		if(User.checkLogin(user, pass))
-		{
+		if (us.checkLogin(user, pass)) {
 			session.setAttribute("result", "Success");
 			session.setAttribute("loggedin", user);
-			
+
 			response.sendRedirect("/Inventory/dashboard.jsp");
 		} else {
 			session.setAttribute("result", "Error");
-			
+
 			response.sendRedirect("/Inventory/login.jsp");
 		}
 		

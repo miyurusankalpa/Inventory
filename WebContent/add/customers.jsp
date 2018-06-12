@@ -19,7 +19,7 @@
 			name="address" placeholder="enter a address" required> <br>
 			<label>Email</label>
 		<input type="text" class="form-control"
-			name="email" placeholder="enter a email" required> <br>
+			name="email" placeholder="enter a email" required required pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}"> <br>
 			<label>Contact Number</label>
 		<input type="number" class="form-control"
 			name="contact" placeholder="enter a contact" required> <br>
