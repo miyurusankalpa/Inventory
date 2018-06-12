@@ -72,7 +72,7 @@ public class Products extends Page {
 			price = rs.getInt("price");
 
 			html += "<tr><th scope=\"row\">" + productid + "</th><td>" + name + "</td><td>" + qty + "</td><td>" + price
-					+ "</td>" + createbtnreport(productid) + createBtns(productid, "products") + "</tr>";
+					+ "</td>" + createbtnreport(productid, "products") + createBtns(productid, "products") + "</tr>";
 		}
 
 		return html;
@@ -98,10 +98,6 @@ public class Products extends Page {
 		return html;
 	}
 	
-	public String createbtnreport(int i) {
-		return "<td><a href=\"/Inventory/reports/products.jsp?id="+i+"\" class=\"btn btn-dark\"><i class=\"fa fa-list-alt\"></i> Report</a></td>";
-	}
-
 	public String deletequery() {
 		return "DELETE FROM `products` WHERE id='" + this.productid + "'";
 	}
