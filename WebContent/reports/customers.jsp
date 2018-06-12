@@ -35,7 +35,8 @@ Page.setTitle("Customer Report");
 			<tr>
 				<th scope="col">Product</th>
 				<th scope="col">Price</th>
-				<th scope="col">Total</th>
+				<th scope="col">Quantity</th>
+				<th scope="col">Total Price</th>
 			</tr>
 		</thead>
 		<tbody>

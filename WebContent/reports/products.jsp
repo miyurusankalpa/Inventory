@@ -33,9 +33,9 @@ Page.setTitle("Products Report");
 	<table class="table table-hover table-bordered text-center">
 		<thead class="thead-dark">
 			<tr>
-				<th scope="col">Customers</th>
+				<th scope="col">Customer</th>
 				<th scope="col">Address</th>
-				<th scope="col">Total</th>
+				<th scope="col">Quantity</th>
 			</tr>
 		</thead>
 		<tbody>
