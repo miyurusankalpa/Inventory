@@ -19,6 +19,15 @@
 		c.getdatafromdb(i);
 		
 		}
+
+		if (session.getAttribute("result") != null) {
+
+			out.print("<div class=\"alert alert-warning\">");
+			out.println(session.getAttribute("result"));
+			session.removeAttribute("result");
+			out.print("</div>");
+
+		}
 	%>
 	<div class="card card-body bg-light">
 	<form action="/Inventory/Customers_Edit" method="post">
@@ -27,10 +36,10 @@
 			name="id" placeholder="id" value="<% out.print(c.getId()); %>" readonly> <br>
 			<label>Name</label>
 		 <input type="text" class="form-control"
-			name="name" placeholder="enter a name" value="<% out.print(c.getName()); %>"> <br>
+			name="name" placeholder="enter a name" value="<% out.print(c.getName()); %>" required> <br>
 			<label>Address</label>
 		  <input type="text" class="form-control"
-			name="address" placeholder="enter a address" value="<% out.print(c.getAddress()); %>"> <br>
+			name="address" placeholder="enter a address" value="<% out.print(c.getAddress()); %>" required> <br>
 			<label>Email</label>
 		<input type="text" class="form-control"
 			name="email" placeholder="enter a email" value="<% out.print(c.getEmail()); %>" required pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}"> <br>

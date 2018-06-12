@@ -8,6 +8,16 @@
 	<a href="/Inventory/list/customers.jsp" class="btn btn-lg align-right btn-info"><i class="fa fa-list"></i> list</a>
 	</h1>
 	
+	<%
+		if (session.getAttribute("result") != null) {
+
+			out.print("<div class=\"alert alert-warning\">");
+			out.println(session.getAttribute("result"));
+			session.removeAttribute("result");
+			out.print("</div>");
+
+		}
+	%>
 	<br>
 	<div class="card card-body bg-light">
 	<form action="/Inventory/customers_addata" method="post">

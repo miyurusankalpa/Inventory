@@ -1,6 +1,7 @@
 package Serverlets;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -9,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import database.Database;
+import exception.ValidateException;
 import modals.*;
 
 /**
@@ -48,19 +50,22 @@ public class Customers_Addata extends HttpServlet {
 				cu.setEmail(e);
 				cu.setContact(co);
 				
-				String query = cu.createquery();
-
-				//out.println(query);c
-
-				String result = c.adddata(query);
-				
-				session.setAttribute("result", result);
-				
-				//response.getWriter().append(result);
-				
-				response.sendRedirect("/Inventory/list/customers.jsp");
-				
-				//out.println(result);
-				
+				try {
+					cu.validate();
+				} catch (ValidateException e1) {
+					session.setAttribute("result", e1.getValidateException());
+					
+					response.sendRedirect("/Inventory/add/customers.jsp");
+					return;
+				}
+					String query = cu.createquery();
+	
+					String result = c.adddata(query);
+					
+					session.setAttribute("result", result);
+					
+					//response.getWriter().append(result);
+					
+					response.sendRedirect("/Inventory/list/customers.jsp");
 			}
 }

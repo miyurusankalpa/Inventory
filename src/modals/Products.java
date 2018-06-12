@@ -3,6 +3,7 @@ package modals;
 import java.sql.*;
 
 import database.Database;
+import exception.ValidateException;
 
 public class Products extends Page implements Inventory {
 
@@ -110,5 +111,17 @@ public class Products extends Page implements Inventory {
 	public String editquery() {
 		return "UPDATE `products` SET products_name='" + this.name + "', quantity='" + this.qty + "', price='"
 				+ this.price + "' WHERE id = '" + this.productid + "'";
+	}
+	
+	public void validate() throws ValidateException {
+
+		if (name == null || name.isEmpty()) 
+			 throw new ValidateException("Please specify a name");
+		
+		if (price<0)
+			 throw new ValidateException("Please specify valid price");
+		
+		if (qty<0)
+			 throw new ValidateException("Please specify valid qty");	
 	}
 }

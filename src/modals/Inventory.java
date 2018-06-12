@@ -2,6 +2,8 @@ package modals;
 
 import java.sql.SQLException;
 
+import exception.*;
+
 public interface Inventory {
 
 		public void getdatafromdb(int i) throws SQLException;
@@ -14,4 +16,5 @@ public interface Inventory {
 		
 		public String editquery();
 		
+		public void validate() throws ValidateException;
 }

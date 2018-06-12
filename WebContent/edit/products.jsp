@@ -18,6 +18,15 @@
 			int i = Integer.parseInt(s);
 			p.getdatafromdb(i);
 		}
+
+		if (session.getAttribute("result") != null) {
+
+			out.print("<div class=\"alert alert-warning\">");
+			out.println(session.getAttribute("result"));
+			session.removeAttribute("result");
+			out.print("</div>");
+
+		}
 	%>
 	<div class="card card-body bg-light">
 	<form action="/Inventory/Products_Edit" method="post">
@@ -26,13 +35,13 @@
 			name="id" placeholder="id" value="<% out.print(p.getId()); %>" readonly> <br>
 	<label>Name</label>
 		 <input type="text" class="form-control"
-			name="name" placeholder="enter a name" value="<% out.print(p.getName()); %>"> <br>
+			name="name" placeholder="enter a name" value="<% out.print(p.getName()); %>" required> <br>
 	<label>Quantity</label>
 		  <input type="number" class="form-control"
-			name="qty" placeholder="enter a qty" value="<% out.print(p.getQty()); %>"> <br>
+			name="qty" placeholder="enter a qty" value="<% out.print(p.getQty()); %>" required> <br>
 	<label>Price</label>
 		 <input type="number" class="form-control"
-			name="price" placeholder="enter a price" value="<% out.print(p.getPrice()); %>"> <br>
+			name="price" placeholder="enter a price" value="<% out.print(p.getPrice()); %>" required> <br>
 		 <button type="submit" class="btn btn-primary float-right" value="Add"><i class="fa fa-save"></i> Save</button>
 	</form>
 </div>

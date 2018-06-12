@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import database.Database;
+import exception.ValidateException;
 import modals.*;
 
 /**
@@ -44,6 +45,15 @@ public class Products_Addata extends HttpServlet {
 		p.setName(n);
 		p.setQty(q);
 		p.setPrice(pr);
+		
+		try {
+			p.validate();
+		} catch (ValidateException e1) {
+			session.setAttribute("result", e1.getValidateException());
+			
+			response.sendRedirect("/Inventory/add/products.jsp");
+			return;
+		}
 		
 		String query = p.createquery();
 

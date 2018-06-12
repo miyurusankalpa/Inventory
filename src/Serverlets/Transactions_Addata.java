@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import database.Database;
+import exception.ValidateException;
 import modals.*;
 
 /**
@@ -67,9 +68,17 @@ public class Transactions_Addata extends HttpServlet {
 				
 				t.setTotal(tot);
 				
+				
+				try {
+					t.validate();
+				} catch (ValidateException e1) {
+					session.setAttribute("result", e1.getValidateException());
+					
+					response.sendRedirect("/Inventory/add/transactions.jsp");
+					return;
+				}
+				
 				String query = t.createquery();
-
-				//out.println(query);c
 
 				String result = c.adddata(query);
 				
@@ -78,8 +87,6 @@ public class Transactions_Addata extends HttpServlet {
 				//response.getWriter().append(result);
 				
 				response.sendRedirect("/Inventory/list/transactions.jsp");
-				
-				//out.println(result);
-				
+							
 			}
 }

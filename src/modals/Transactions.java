@@ -4,6 +4,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import database.Database;
+import exception.ValidateException;
 
 public class Transactions extends Page implements Inventory {
 	
@@ -113,5 +114,19 @@ public class Transactions extends Page implements Inventory {
 	public String editquery() {
 		return "UPDATE `transactions` SET date='" + this.date + "', products='" + this.product.getId() + "', customers ='" + this.customer.getId() + "', total='"
 				+ this.total + "' WHERE id = '" + this.id + "'";
+	}
+	
+	public void validate() throws ValidateException {
+		if (date == null || date.isEmpty()) 
+			 throw new ValidateException("Please specify a date");
+		
+		if (product == null) 
+			 throw new ValidateException("Please specify a valid product");
+		
+		if (customer == null) 
+			 throw new ValidateException("Please specify a valid customer");
+		
+		if (total<0)
+			 throw new ValidateException("Please specify a total");	
 	}
 }

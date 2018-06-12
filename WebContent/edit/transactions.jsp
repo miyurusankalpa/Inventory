@@ -18,6 +18,15 @@
 			int i = Integer.parseInt(s);
 			t.getdatafromdb(i);
 		}
+
+		if (session.getAttribute("result") != null) {
+
+			out.print("<div class=\"alert alert-warning\">");
+			out.println(session.getAttribute("result"));
+			session.removeAttribute("result");
+			out.print("</div>");
+
+		}
 	%>
 	<div class="card card-body bg-light">
 	<form action="/Inventory/Transactions_Edit" method="post">
@@ -26,9 +35,9 @@
 			name="id" placeholder="id" value="<% out.print(t.getId()); %>" readonly> <br>
 			<label>Date</label>
 	 	<input type="date" class="form-control"
-			name="date" placeholder="enter a date" value="<% out.print(t.getDate()); %>"> <br>
+			name="date" placeholder="enter a date" value="<% out.print(t.getDate()); %>" required> <br>
 			<label>Product</label>
-		<select class="form-control" name="products">
+		<select class="form-control" name="products" required>
 		  <option value="" disabled hidden>select a product id</option>
 		    <%
 		    Products p = new Products();
@@ -37,7 +46,7 @@
 		    %>
 		  </select>
 		<br><label>Customer</label>
-		<select class="form-control" name="customers">
+		<select class="form-control" name="customers" required>
 		  <option value="" disabled hidden>select a customer</option>
 		    <%
 		    Customers c = new Customers(); 
@@ -47,7 +56,7 @@
 		  </select>
 		<br><label>Quantity</label>
 		<input type="number" class="form-control"
-			name="total" placeholder="enter a total" value="<% out.print(t.getTotal()); %>"> <br>
+			name="total" placeholder="enter a total" value="<% out.print(t.getTotal()); %>" required> <br>
 		 <button type="submit" class="btn btn-primary float-right" value="Add"><i class="fa fa-save"></i> Save</button>
 	</form>
  </div>

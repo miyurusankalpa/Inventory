@@ -3,6 +3,7 @@ package modals;
 import java.sql.*;
 
 import database.Database;
+import exception.ValidateException;
 
 public class Customers extends Page implements Inventory {
 	
@@ -157,5 +158,23 @@ public class Customers extends Page implements Inventory {
 
 	public String editquery() {
 		return "UPDATE `customers` SET customers_name='" + this.name + "', address='" + this.address + "', email='"+ this.email + "', contact='"+ this.contact + "' WHERE id = '" + this.customersid + "'";
+	}
+	
+	public void validate() throws ValidateException {
+
+		if (name == null || name.isEmpty()) 
+			 throw new ValidateException("Please specify a name");
+		
+		if (address == null || address.isEmpty()) 
+			 throw new ValidateException("Please specify a address");
+		
+		if (email == null || email.isEmpty()) 
+			 throw new ValidateException("Please specify a email");
+		
+		if (!email.contains("@")) 
+			 throw new ValidateException("Please specify a valid email");
+		
+		if (contact<0)
+			 throw new ValidateException("Please specify a valid contact number");	
 	}
 }

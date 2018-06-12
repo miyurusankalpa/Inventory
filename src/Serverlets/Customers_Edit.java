@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import database.Database;
+import exception.ValidateException;
 import modals.Customers;
 
 /**
@@ -48,6 +49,15 @@ public class Customers_Edit extends HttpServlet {
 		cu.setAddress(a);
 		cu.setEmail(e);
 		cu.setContact(co);
+		
+		try {
+			cu.validate();
+		} catch (ValidateException e1) {
+			session.setAttribute("result", e1.getValidateException());
+			
+			response.sendRedirect("/Inventory/edit/customers.jsp?id="+d);
+			return;
+		}
 		
 		String query = cu.editquery();
 
